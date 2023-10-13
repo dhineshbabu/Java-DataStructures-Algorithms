@@ -13,7 +13,10 @@
 * O(m*n) - 2 for loops with a and b iterations
 
 ### Complexity Chart
-![complexity](src/DSA_ComplexityChart.png)
+![complexity](./src/DSA_ComplexityChart.png)
+
+### Common DSA Operations
+![DSA](./src/CommonDSOperations.png)
 
 <hr/>
 <hr/>
