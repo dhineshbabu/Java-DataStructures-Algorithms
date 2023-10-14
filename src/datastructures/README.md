@@ -52,3 +52,43 @@ get(index)
 set(index,value)
 remove(index)
 ```
+
+<hr/>
+<hr/>
+
+### Stack
+
+* push and pop - O(1)
+
+```
+operations & concepts:
+------------------------
+Node class (value, next)
+Constructor(top,height)
+pop()
+push(value)
+getTop()
+getHeight()
+printStack
+
+```
+
+<hr/>
+<hr/>
+
+### Queue - Last in First out
+
+* enqueue and dequeue - O(1)
+
+```
+operations & concepts:
+------------------------
+Node class (value, next)
+Constructor(first,last, length)
+enqueue()
+dequeue()
+getFirst()
+getLast()
+printQueue()
+getLength()
+```
