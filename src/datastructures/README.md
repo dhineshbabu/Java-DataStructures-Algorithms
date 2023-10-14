@@ -25,4 +25,30 @@ Constructor (head, tail, length)
 append
 prepend
 insert
+removeFirst
+removeLast
+get(index)
+set(index, value)
+insert(index, value)
+remove(index)
+reverse()
+```
+<hr/>
+<hr/>
+
+### Doubly Linked Lists
+
+```
+operations & concepts:
+------------------------
+node class (value, next, prev)
+Constructor (head, tail, length)
+append
+prepend
+insert (index, value)
+removeFirst
+removeLast
+get(index)
+set(index,value)
+remove(index)
 ```
