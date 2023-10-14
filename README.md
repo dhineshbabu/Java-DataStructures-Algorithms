@@ -13,16 +13,7 @@
 * O(m*n) - 2 for loops with a and b iterations
 
 ### Complexity Chart
-![complexity](./src/DSA_ComplexityChart.png)
+![complexity](src/resources/DSA_ComplexityChart.png)
 
 ### Common DSA Operations
-![DSA](./src/CommonDSOperations.png)
-
-<hr/>
-<hr/>
-### 2D Arrays
-<hr/>
-
-* a[i][j] - i is row and j is column
-*  Traversing or Searching is `O(m*n)`, other operations are `O(1)` mostly
-
+![DSA](src/resources/CommonDSOperations.png)
