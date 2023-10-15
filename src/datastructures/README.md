@@ -92,3 +92,40 @@ getLast()
 printQueue()
 getLength()
 ```
+
+<hr/>
+<hr/>
+
+### Tree 
+#### Binary Tree and Binary Search tree
+* full and perfect tree
+* Tree can have only 1 parent
+* Node with no children is leaf
+* insert, search, remove - O(logn)
+
+```
+operations & concepts:
+------------------------
+Node(value, left, right)
+Constructor - root, value
+insert
+```
+
+<hr/>
+<hr/>
+
+### Hash Tables
+
+* Collision: can be managed by separate chaining or linear probing 
+* hash method - O(1)
+* get, set - O(1)
+
+```
+operations & concepts:
+------------------------
+Node - key, value, next
+constructor (size, Node[])
+set(key, value)
+get(key)
+
+```
