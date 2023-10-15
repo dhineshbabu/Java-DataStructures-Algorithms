@@ -125,7 +125,45 @@ operations & concepts:
 ------------------------
 Node - key, value, next
 constructor (size, Node[])
+hash()
 set(key, value)
 get(key)
+keys()
+```
+
+<hr/>
+<hr/>
+
+### Graphs
+
+* edge is a connection between 2 vertices (nodes)
+* edge can be waited or non waited
+* graphs can be implemented with adjacency matrix and adjacency list
+* adj. list
+  * storing - space O(v + E)
+* adj. matrix
+  * storing - space O(n^2)
 
 ```
+operations & concepts:
+------------------------
+constructor - default constructor
+private HashMap<String, ArrayList<String>> adjList = new HashMap<>();
+Add Vertex
+Add Edge
+Remove Edge
+Remove Vertex
+printGraph
+```
+
+
+<hr/>
+<hr/>
+
+### heaps
+
+* always a complete binary tree
+* we can have duplicates
+* leftChild = 2 * parentIndex
+* rightChild = 2 * parentIndex + 1
+
