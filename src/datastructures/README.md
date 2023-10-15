@@ -160,10 +160,23 @@ printGraph
 <hr/>
 <hr/>
 
-### heaps
+### Heaps
 
 * always a complete binary tree
 * we can have duplicates
 * leftChild = 2 * parentIndex
 * rightChild = 2 * parentIndex + 1
+* Parent node index = childIndex // 2
 
+```
+operations & concepts:
+------------------------
+getHeap()
+leftChild()
+rightChild()
+parent()
+swap()
+insert()
+remove()
+sinkDown()
+```
