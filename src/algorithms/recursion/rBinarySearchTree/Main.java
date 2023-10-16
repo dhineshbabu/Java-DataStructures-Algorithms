@@ -5,17 +5,15 @@ public class Main {
 
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(47);
-        bst.insert(91);
-        bst.insert(2);
-        bst.insert(17);
-        bst.insert(35);
-        bst.insert(87);
-        bst.insert(20);
-        System.out.println(bst.root.left.right.value);
-        System.out.println();
-        System.out.println(bst.rContains(35));
-        System.out.println(bst.rContains(1100));
-        bst.rInsert(50);
-
+        bst.insert(21);
+        bst.insert(76);
+        bst.insert(18);
+        bst.insert(27);
+        bst.insert(52);
+        bst.insert(82);
+        System.out.println(bst.BFS());
+        System.out.println(bst.DFSPreOrder());
+        System.out.println(bst.DFSPostOrder());
+        System.out.println(bst.DFSInOrder());
     }
 }
