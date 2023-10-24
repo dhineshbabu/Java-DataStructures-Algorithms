@@ -12,4 +12,9 @@
   * else if the number to find is greater than the middleNumber
     * then set low=middlePosition + 1
   * iterate the above until the number is found
-  * 
+
+<hr />
+
+### For recursive method,
+* use the same steps above
+
