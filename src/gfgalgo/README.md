@@ -40,3 +40,14 @@
     * ```n=n-1 then go to start:```
     * <b>This is called tail call elimination</b>
     * This is the reason quick sort is faster than merge sort
+
+<hr />
+
+### Arrays
+
+* Random Access - accessing elements are O(1)
+* When arrays used, modern processors prefetch the items in cache
+
+* Array Types:
+  * Fixed Size Arrays
+  * Dynamic Sized Arrays (ArrayList)
