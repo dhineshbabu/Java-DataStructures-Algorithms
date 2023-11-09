@@ -51,3 +51,14 @@
 * Array Types:
   * Fixed Size Arrays
   * Dynamic Sized Arrays (ArrayList)
+* Sliding window technique
+  * compute the sum of current window using sum of previous window
+
+<hr />
+
+### Binary Search
+
+* Binary Search is a powerful and efficient algorithm for finding elements in sorted arrays.
+* Go to the middle and check if the element is higher than search on the left else search on the right
+* o(logn) is the typical time complexity
+* max no of iteration = height of the tree in worst case
