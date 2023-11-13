@@ -179,7 +179,7 @@
   * insertions in middle is costly
 
 
-* Linked Lists:
+* Singly Linked Lists:
   * Memory of nodes need not be contiguous
   * Each node will have
     * data
@@ -194,3 +194,18 @@
   * Merging 2 sorted linked lists are faster than arrays
   * Implementation of simple memory manager where we need to link free blocks
   * Easier implementation of Queue and Deque data structures
+
+* Doubly Linked Lists:
+  * can be traversed in both directions
+  * inserting deleting at both end is O(1)
+  * Disadv:
+    * Extra space for prev
+    * code becomes more complex
+* Circular linked list
+  * last node next will be head node
+  * we can reuse the same singly or doubly linked list Node class
+  * Adv:
+    * used in like algorithms such as round robin
+  * Circular Doubly Linked List:
+    * previous of head is last node
+    * next of last node is head
