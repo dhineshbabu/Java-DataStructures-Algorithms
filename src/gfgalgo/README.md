@@ -209,3 +209,126 @@
   * Circular Doubly Linked List:
     * previous of head is last node
     * next of last node is head
+
+
+<hr />
+
+### Stacks
+
+* first in first out
+* Operations:
+  * isEmpty()
+  * push()
+  * pop()
+  * peek()
+  * size()
+* conditions
+  * overflow
+  * underflow
+* Applications of Stack:
+  * Function calls
+  * Balanced Parenthesis
+  * Reversing Items
+  * Infix to Postfix / Prefix
+  * Evaluation of Postfix
+  * Stack span problem
+  * Undo/Redo or Forward / Backward
+
+* Stack in Java Collection Interface
+  * List -> Vector -> Stack
+  * Queue -> Deque -> ArrayDeque  (Recommended)
+
+* Infix: x+y
+* Postfix: xy+
+* Prefix: +xy
+
+<hr />
+
+### Queue
+
+* First in First Out
+  * Operations:
+    * enqueue()
+    * dequeue()
+    * getFront()
+    * getRear()
+    * size()
+    * isEmpty()
+* Applications
+  * Pub Sub Models
+  * Synchronization
+  * OS (FCFS Scheduling, Spooling)
+  * Networking(Routes / Switches and Mail Queues)
+  * Variations:
+    * Deque
+    * Priority Queue
+    * Double Ended Priority Queue
+
+* In Java , Queue Implementations are
+  * LinkedList (Doubly)
+  * ArrayDeque
+
+
+<hr />
+
+### Deque
+
+* insert and delete can be done at the both the ends
+* operations
+  * insertFront()
+  * insertRear()
+  * deleteFront()
+  * deleteRear
+  * getFront()
+  * getRear()
+  * isFull()
+  * isEmpty()
+  * size()
+
+* Deque can be implemented using 
+  * LinkedList  (Doubly linked list)
+  * Array (Circular Array)
+
+* Applications
+  * can be used as both stack and queue
+  * Browser history of action
+  * Steal processor scheduling algorithm
+  * Implementing a priority queue with two types of priorities
+  * Max and Minimum of all subarrays of size k in an array
+
+
+<hr />
+
+### Tree Data Structure
+
+* Data structure used to implement hierarchy
+* Top is root node
+* Bottom are the leaf nodes
+* Tree can contain many subtrees
+* descendants - all elements in the sub tree of a node
+* ancestors - all the parent nodes
+
+* Applications:
+  * org structure
+  * folders
+  * html/xml content
+  * In OOP (inheritance)
+* Binary Search Tree
+* Binary Heap
+* B and B+ trees in DBMS
+* Spanning and shortest path trees in computer networks
+* Parse Tree and Expression Tree
+* Trie, Suffix Tree, Binary Index Tree, Segment Tree
+
+* Binary Tree:
+  * every node has atmost 2 children
+  * every node will have pointers to left and right child
+  * leaf node pointer will point to null
+* Traversal:
+  * BFS or level order
+  * DFS
+    * Inorder (Left Root Right)
+    * PreOrder ( Root Left Right)
+    * PostOrder (Left Right Root )
+* Height of binary tree:
+  * Max number of nodes from root to leaf
