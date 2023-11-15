@@ -332,3 +332,40 @@
     * PostOrder (Left Right Root )
 * Height of binary tree:
   * Max number of nodes from root to leaf
+
+
+<hr />
+
+### Binary Search Tree
+
+* most of the operations are O(logn) and search is O(n)
+* all the values on the left of root are smaller and on the right are greater
+* All keys are typically considered as distinct
+* Implementation in Java: (self balancing BST)
+  * Tree set
+  * Tree Map
+* order to be maintained after deletion
+
+* Self-balancing BST:
+  * keep the height as O(log n)
+  * if we  have keys in advance, then we can make a perfectly balanced BST
+    * How to make the tree balanced with random inserts and deletions?
+      * with some custom restructuring with either left or right rotation
+  * Implementations:
+    * AVL Trees
+      * strict in balance
+        * diff of left height and right height should not be more than 1
+          * This is balance factor
+    * Red Black Trees
+      * Mostly used in real time
+      * not much strict like AVL Trees 
+      * Every node in either Red or Black
+      * Root is always black
+      * No two consecutive reds
+      * Number of black nodes from every node to all of its descendant leaves should be same
+    * Applications of self-balancing BST
+      * To maintain sorted stream of data
+      * To implement doubly ended priority queue
+      * To solve problems like
+        * count smaller / greater in a stream
+        * Floor / Ceiling / Greater / Smaller in a stream
