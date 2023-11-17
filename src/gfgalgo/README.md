@@ -369,3 +369,65 @@
       * To solve problems like
         * count smaller / greater in a stream
         * Floor / Ceiling / Greater / Smaller in a stream
+
+
+<hr />
+
+### Graphs
+
+* G = (V, E)
+  * Directed Graphs
+    * Indegree - No of incoming vertices
+    * outdegree - No of outgoing vertices
+  * Undirected Graph
+    * degree of edge - no of edges to other edge
+* Complete Graph:
+  * All the nodes are connected to each other
+* Walk:
+  * v1, v2, v4, v2
+* Path: 
+  * connection between 2 nodes (v1 -> v2 -> v4)
+* Cyclic:
+  * There exists a walk that begins and end with same vertex
+    * Applicable to both directed and undirected
+* Acyclic:
+  * Opposite to Cyclic
+  * Applicable to both directed and undirected
+* Weighted Graphs
+  * will have weight from node1 to node2
+* Unweighted Graphs
+
+* GRAPH REPRESENTATION
+  * Adjacency Matrix
+    * Dynamic Sized Arrays
+    * Linked Lists
+  * Adjacency List
+
+* Graph Traversal:
+  * BFS
+    * Level order traversal
+  * DFS
+    * Applications of DFS
+      * Cycle Detection
+      * Topological Sorting
+      * Strongly Connected components
+      * Solving merge and similar puzzles
+      * Path Finding
+
+
+<hr />
+
+### Greedy Algorithms
+
+* useful for optimization problems
+  * shortest path
+  * minimum combinations
+* Greedy algorithm may not work always
+* Some problems can be solved 
+  * Activity selection
+  * Fractional Knapsack
+  * JOb sequencing
+  * Prim's Algorithm
+  * Kruskal Algorithm
+  * Dijikstra's Algorithm
+  * Huffman coding
