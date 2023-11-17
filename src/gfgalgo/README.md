@@ -431,3 +431,13 @@
   * Kruskal Algorithm
   * Dijikstra's Algorithm
   * Huffman coding
+
+
+<hr />
+
+### Greedy Algorithms
+
+* Permutations
+* Rat in a Maze
+* N queen Problem
+* Sudoku Problem
