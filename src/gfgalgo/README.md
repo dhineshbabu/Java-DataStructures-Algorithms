@@ -441,3 +441,27 @@
 * Rat in a Maze
 * N queen Problem
 * Sudoku Problem
+
+<hr />
+
+### Dynamic Programming
+
+* In simple words, it is an optimization over plain recursion
+* idea is to reuse the solution of sub-problem when there are overlapping subproblem
+  * Memoization(Top down)
+  * Tabulation (Bottom up)
+* Applications
+  * Bellman Ford Algorithm
+  * Floyd Warshall Algorithm
+  * Diff Utility
+  * Search closed words (Edit Distance)
+  * Resource Application (0-1 knapsack)
+  * Longest Common Subsequence
+    * Some variations of LCS
+      * Diff Utility
+      * Minimum insertion and deletions to convert s1 into s2
+      * Shortest Common Subsequence
+      * Longest palindromic subsequence
+      * Longest Repeating subsequence
+      * space optimized DP solution of LCS
+      * Printing LCS
