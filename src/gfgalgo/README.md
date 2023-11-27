@@ -465,3 +465,34 @@
       * Longest Repeating subsequence
       * space optimized DP solution of LCS
       * Printing LCS
+
+
+<hr />
+
+### Trie
+
+* Efficient for the following operations on words in a dictionary
+  * Search
+  * Insert
+  * Delete
+  * Prefix Search
+  * Lexicographical ordering of words
+
+
+
+<hr />
+
+### Segment Tree
+
+* used for fixed sized arrays and following types of operations
+  * Range Query: O(log n) typically
+  * Update a value: O(log n) typically
+* Requires O(n) preprocessing time and O(n) auxiliary space
+
+<hr />
+
+### Disjoint Set
+
+* operations
+  * find(x) - we will get same representative element for all the elements 
+  * union(x, y)
