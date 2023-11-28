@@ -5,7 +5,7 @@ public class Prob_CountSetBits {
     // Brian Kerningam's Algorithm
     public static int countSetBits(int number) {
         int res = 0;
-
+        // multiply n*n-1 until the number becomes 0 - This is the easiest way
         while(number > 0) {
             number = number & (number-1);
             res = res + 1;

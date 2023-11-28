@@ -24,6 +24,6 @@ public class Porb_CheckIfKthBitIsSet {
     }
 
     public static void main(String[] args) {
-        checkKthBit(4, 5);
+        checkKthBit(4, 3);
     }
 }

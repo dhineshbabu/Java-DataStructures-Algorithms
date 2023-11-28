@@ -12,11 +12,15 @@ public class Prob_PalindromeNumbers {
         int reverse = 0;
         int n = inputNumber;
         while(n > 0) {
+            // get the last digit
             int digit = n%10;
+            // remove the final digit by dividing with 10
             n = n/10;
             // add the digit to the reverse
             reverse = reverse*10 + digit;
         }
+
+        // check the palindrome status
         return inputNumber == reverse;
     }
 
