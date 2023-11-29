@@ -435,7 +435,7 @@
 
 <hr />
 
-### Greedy Algorithms
+### Backtracking
 
 * Permutations
 * Rat in a Maze
