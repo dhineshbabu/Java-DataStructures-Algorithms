@@ -25,4 +25,6 @@ public class Prob_LC371_IntegerSum {
     public static void main(String[] args) {
         System.out.println(getSum(9, 10));
     }
+
+
 }

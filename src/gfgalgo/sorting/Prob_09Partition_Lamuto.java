@@ -35,7 +35,7 @@ public class Prob_09Partition_Lamuto {
 
     public static void main (String[] args)
     {
-        int arr[] = new int[]{10,80,30,90,40,50,70};
+        int arr[] = new int[]{10,80,40,90,30,50,70};
 
         int n = arr.length;
         iPartition(arr,0,n-1);

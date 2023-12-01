@@ -1,6 +1,6 @@
 package datastructures.backtracking;
 
-public class Prob_RatInAMaze {
+public class Prob_02RatInAMaze {
     /*
     Rat is allowed only in the below steps in a binary matrix
     (i, j+1) - right
@@ -20,46 +20,56 @@ public class Prob_RatInAMaze {
         }
     }
 
+    // Helper function to check if the current cell is safe to move into
     static boolean isSafe(int[][]  maze, int i, int j) {
         return (i<N && j<N && maze[i][j]==1);
     }
 
     // this is the trigger function
+    // Main function to solve the maze
     static boolean solveMaze(int[][] maze) {
-       // initiate the target array
+        // Initialize the solution array
         int[][] soln = new int[N][N];
 
-        if(solveMazeRec(maze, 0, 0, soln) == false) {
+        // If the recursive solver returns false, print a message and return false
+        if (solveMazeRec(maze, 0, 0, soln) == false) {
             System.out.println("Solution does not exist");
             return false;
         }
 
+        // Print the solution
         printSolution(soln);
         return true;
     }
 
-    static boolean solveMazeRec(int[][] maze, int i, int j, int[][] soln ){
-        // base case
-        if(i == N-1 && j== N-1 & maze[i][j] == 1) {
+    // Recursive function to solve the maze
+    static boolean solveMazeRec(int[][] maze, int i, int j, int[][] soln) {
+        // Base case: if we have reached the destination
+        if (i == N - 1 && j == N - 1 && maze[i][j] == 1) {
             soln[i][j] = 1;
             return true;
         }
 
-        // chekc safe and backtrack
-        if(isSafe(maze, i, j) == true) {
-            soln[i][j] =1;
+        // Check if the current cell is safe to move into
+        if (isSafe(maze, i, j)) {
+            // Mark the current cell as part of the solution path
+            soln[i][j] = 1;
 
-            if(solveMazeRec(maze,i+1, j, soln) == true) {
+            // Try moving down and check if it leads to a solution
+            if (solveMazeRec(maze, i + 1, j, soln)) {
                 return true;
             }
 
-            if(solveMazeRec(maze,i, j+1, soln) == true) {
+            // Try moving right and check if it leads to a solution
+            if (solveMazeRec(maze, i, j + 1, soln)) {
                 return true;
             }
 
-            // if not true then set soln position to 0. Back track
+            // If neither of the above moves leads to a solution, backtrack
             soln[i][j] = 0;
         }
+
+        // No solution found from this cell
         return false;
     }
 

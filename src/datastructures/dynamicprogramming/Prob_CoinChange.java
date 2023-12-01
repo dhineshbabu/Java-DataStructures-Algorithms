@@ -5,6 +5,7 @@ public class Prob_CoinChange   {
         int n = coins.length;
         int[][] dp = new int[n+1][s+1];
 
+        // initialize all the first column with 1
         for (int i = 0; i <=n; i++) {
             dp[i][0] = 1;
         }

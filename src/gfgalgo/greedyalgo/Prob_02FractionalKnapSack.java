@@ -31,6 +31,7 @@ public class Prob_02FractionalKnapSack {
                 res += arr[i].val * ((double) totalWeight) / (double) arr[i].wt;
                 break;
             }
+            System.out.println(res);
 
         }
         return res;

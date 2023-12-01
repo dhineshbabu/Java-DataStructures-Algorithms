@@ -1,6 +1,6 @@
 package datastructures.backtracking;
 
-public class Prob_NQueensProblem {
+public class Prob_03NQueensProblem {
 
     // initialize common
     static final int N = 4;

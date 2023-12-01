@@ -1,6 +1,6 @@
 package datastructures.backtracking;
 
-public class Prob_PrintAllPermutations {
+public class Prob_01PrintAllPermutationsNaive {
     /*
     print all the permutations that will not have "AB" in it
      */

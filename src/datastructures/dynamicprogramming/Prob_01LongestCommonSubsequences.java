@@ -2,7 +2,7 @@ package datastructures.dynamicprogramming;
 
 import java.util.Arrays;
 
-public class Prob_LongestCommonSubsequences {
+public class Prob_01LongestCommonSubsequences {
     // using memoization technique
 
     // initialize memo array
@@ -21,7 +21,7 @@ public class Prob_LongestCommonSubsequences {
         }
 
         else {
-            // check from the alst value
+            // check from the last value
             if(s1.charAt(n-1) ==  s2.charAt(m-1)){
                 memo[n][m] = 1 + lcs(s1, s2, n-1, m-1);
             } else {
@@ -46,14 +46,14 @@ public class Prob_LongestCommonSubsequences {
         for(int i=0; i<=m; i++){
             dp[i][0] = 0;
         }
-
+        // fill first column with 0
         for(int j=0; j<=n; j++){
             dp[0][j] = 0;
         }
 
         //do the tabulation and get the final value in the amtrix
         for(int i=1; i<=m; i++){
-            for (int j = 0; j <= n; j++) {
+            for (int j = 1; j <= n; j++) {
                 if(s1.charAt(i-1) == s2.charAt(j-1) ) {
                     dp[i][j] = 1 + dp[i-1][j-1];  // add 1 to the diagonal value
                 } else {
