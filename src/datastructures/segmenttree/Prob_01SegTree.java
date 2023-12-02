@@ -1,6 +1,6 @@
 package datastructures.segmenttree;
 
-public class SegTree {
+public class Prob_01SegTree {
     /*
     we maintain 3 variables
     ss = 0
@@ -34,8 +34,12 @@ public class SegTree {
 
     static int getSumRec(int qs, int qe, int ss, int se, int si, int tree[])
     {
+        // if user provides values beyond the array ranges
+        // return 0
         if(se < qs || ss > qe)
             return 0;
+
+        // if user query is completely inside the  query range
         if(qs <= ss &&  qe >= se)
             return tree[si];
 

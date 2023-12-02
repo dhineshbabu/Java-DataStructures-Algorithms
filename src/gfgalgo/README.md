@@ -488,6 +488,13 @@
   * Range Query: O(log n) typically
   * Update a value: O(log n) typically
 * Requires O(n) preprocessing time and O(n) auxiliary space
+* Building segment tree
+  * Each parent will have the sum of children
+  * leaf nodes will be the elements (values) from the source array
+  * We can maintain some dummy nodes to keep the tree a complete binary tree
+  * size of array needed to store the nodes: 2*2^(log2n) - 1
+    * or simply it should be 4n atleast for building segment tree
+    * 
 
 <hr />
 
