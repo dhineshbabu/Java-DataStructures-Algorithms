@@ -1,6 +1,6 @@
 package gfgalgo.mathematics;
 
-public class Prob_PalindromeNumbers {
+public class Prob_02PalindromeNumbers {
     /*
     ex.g: 78987 is a palindrome number
     1. do the modulo and get the last digit and add the output digit to the target

@@ -1,6 +1,6 @@
 package gfgalgo.bitmagic;
 
-public class Prob_CountOddOccurrencesInArray {
+public class Prob_04CountOddOccurrencesInArray {
     /*
     uses x^x = 0
     x^0 = x formula

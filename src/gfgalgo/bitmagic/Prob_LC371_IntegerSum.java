@@ -2,6 +2,9 @@ package gfgalgo.bitmagic;
 
 public class Prob_LC371_IntegerSum {
     public static int getSum(int a, int b) {
+        /*
+        Given two integers a and b, return the sum of the two integers without using the operators + and -.
+         */
         // If one of the numbers is zero, return the other number
         if (a == 0) return b;
         if (b == 0) return a;

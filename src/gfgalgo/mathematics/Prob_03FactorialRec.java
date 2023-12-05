@@ -1,6 +1,6 @@
 package gfgalgo.mathematics;
 
-public class Prob_FactorialRec {
+public class Prob_03FactorialRec {
     public static int fact(int n) {
         if(n==0) return 1;
 

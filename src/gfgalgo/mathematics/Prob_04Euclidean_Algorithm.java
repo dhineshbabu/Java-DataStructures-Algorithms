@@ -1,6 +1,6 @@
 package gfgalgo.mathematics;
 
-public class Prob_Euclidean_Algorithm {
+public class Prob_04Euclidean_Algorithm {
     // to identify the greatest common divisor or HCF
     public static int gcd(int a, int b) {
         if(b == 0) return a;

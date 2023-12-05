@@ -1,6 +1,6 @@
 package gfgalgo.bitmagic;
 
-public class Prob_CountSetBits {
+public class Prob_02CountSetBits {
 
     // Brian Kerningam's Algorithm
     public static int countSetBits(int number) {

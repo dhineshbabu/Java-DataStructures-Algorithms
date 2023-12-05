@@ -1,6 +1,6 @@
 package gfgalgo.bitmagic;
 
-public class Prob_CheckIfNumberPowerOf2 {
+public class Prob_03CheckIfNumberPowerOf2 {
     public static boolean isPow2(int n ) {
         // using Brian Kerningham's algorithm
         // if the number is power of 2 then bitwise &  of n and n-1 will give 0

@@ -1,6 +1,6 @@
 package gfgalgo.bitmagic;
 
-public class Prob_PowerSetUsingBitwise {
+public class Prob_05PowerSetUsingBitwise {
     public  static void powerSet(String s) {
         int n = s.length();
 

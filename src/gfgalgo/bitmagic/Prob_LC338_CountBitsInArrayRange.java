@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Prob_LC338_CountBitsInArrayRange {
     /*
-    Given two integers a and b, return the sum of the two integers without using the operators + and -.
+
 
      The code uses dynamic programming to build the solution incrementally. The count of set bits for each number is computed based on the counts of set bits for smaller numbers.
      */

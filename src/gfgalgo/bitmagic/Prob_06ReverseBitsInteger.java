@@ -1,6 +1,6 @@
 package gfgalgo.bitmagic;
 
-public class Prob_ReverseBitsInteger {
+public class Prob_06ReverseBitsInteger {
 
     public static int reverseBits(int n) {
         // Time complexity: O(1)

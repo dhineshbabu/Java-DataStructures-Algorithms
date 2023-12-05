@@ -1,6 +1,6 @@
 package gfgalgo.mathematics;
 
-public class Prob_CountDigits {
+public class Prob_01CountDigits {
     /*
     Do Integer division until the x is > 0
     time complexity: ø(d)

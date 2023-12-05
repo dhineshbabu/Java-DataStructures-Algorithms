@@ -1,6 +1,6 @@
 package gfgalgo.bitmagic;
 
-public class Porb_CheckIfKthBitIsSet {
+public class Prob_01CheckIfKthBitIsSet {
     /*
     Intuition is to multiple the given number with number for which only the kth bit is set
     formula to get the number with only Kth bit - 2 ^ (k-1)
