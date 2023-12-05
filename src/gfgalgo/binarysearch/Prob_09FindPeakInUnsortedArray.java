@@ -22,7 +22,7 @@ public class Prob_09FindPeakInUnsortedArray {
             while(low <= high)
             {
                 int mid = (low + high) / 2;
-                System.out.println(mid);
+//                System.out.println(mid);
 
                 // Check if the middle element is a peak element
                 if((mid == 0 || arr[mid - 1] <= arr[mid]) &&

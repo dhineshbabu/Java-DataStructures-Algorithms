@@ -5,14 +5,7 @@ public class Prob_13AllocateMinimumNoOfPages {
     We are provided with an array that represents the number of pages in each book, as well as the number of students available. Each student is required to read the books in a contiguous manner.
      Our objective is to determine the maximum number of pages that a single student needs to read in order to minimize the allocation.
      */
-    public static void main(String args[])
-    {
-        int arr[]={10,20,10,30};
-        int n=arr.length;
-        int k=2;
 
-        System.out.print(minPages(arr,n,k));
-    }
 
     // Function to check if it's feasible to allocate pages in a way that
     // each student gets at most 'ans' number of pages
@@ -66,6 +59,15 @@ public class Prob_13AllocateMinimumNoOfPages {
 
         // Return the minimum number of pages
         return res;
+    }
+
+    public static void main(String args[])
+    {
+        int arr[]={10,20,10,30};
+        int n=arr.length;
+        int k=2;
+
+        System.out.print(minPages(arr,n,k));
     }
 }
 

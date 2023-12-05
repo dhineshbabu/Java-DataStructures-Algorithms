@@ -18,7 +18,7 @@ public class Prob_07Unionof2SortedArrays {
             else if(a[i]>b[j]){System.out.print(b[j]+" ");j++;}
             else{System.out.print(a[i]+" ");i++;j++;}
         }
-        //print the rest of the elements
+        //print the rest of the elements,as it is union, we need all the elements
 
         while(i<m){if(i==0||a[i]!=a[i-1])System.out.print(a[i]+" ");i++;}
         while(j<n){if(j==0||b[j]!=b[j-1])System.out.print(b[j]+" ");j++;}

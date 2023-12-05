@@ -17,6 +17,8 @@ public class Prob_19MeetingWithMaxGuests {
     {
         Arrays.sort(arr);
         Arrays.sort(dep);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(dep));
 
         int i=1,j=0,res=1,curr=1;
         while(i<n && j<n){

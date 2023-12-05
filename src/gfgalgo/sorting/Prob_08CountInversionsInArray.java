@@ -18,14 +18,6 @@ public class Prob_08CountInversionsInArray {
             use the result varialble to track the count
      */
 
-    public static void main (String[] args)
-    {
-        int arr[] = new int[]{2,4,1,3,5};
-
-        int n = arr.length;
-        System.out.print(countInv(arr,0,n-1));
-
-    }
 
     static int countInv(int arr[], int l, int r)
     {
@@ -64,5 +56,15 @@ public class Prob_08CountInversionsInArray {
             arr[k++]=right[j++];
         return res;
     }
+
+    public static void main (String[] args)
+    {
+        int arr[] = new int[]{2,4,1,3,5};
+
+        int n = arr.length;
+        System.out.print(countInv(arr,0,n-1));
+
+    }
+
 
 }

@@ -14,6 +14,8 @@ public class Prob_14ChocoloateDistribution {
         // get the first different
         int result = arr[k-1] - arr[0];
 
+
+        System.out.println(result);
         for(int i=1; i+k-1<n; i++) {
             result = Math.min(result, arr[i+k-1]-arr[i]);
         }

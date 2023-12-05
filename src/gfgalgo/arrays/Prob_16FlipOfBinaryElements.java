@@ -4,7 +4,8 @@ public class Prob_16FlipOfBinaryElements {
 
     /*
 
-    Our Task: Given a binary array, we need to convert this array into an array that either contains all 1s or all 0s.  We need to do it using the minimum number of group flips.
+    Our Task: Given a binary array, we need to convert this array into an array that either contains all 1s or all 0s.
+    We need to do it using the minimum number of group flips.
 
 
     if the array starts with 0 then the array groups will either end with group 0 or group 1
