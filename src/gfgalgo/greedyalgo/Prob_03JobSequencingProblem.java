@@ -38,7 +38,7 @@ public class Prob_03JobSequencingProblem {
         int[] result = new int[n];
         boolean[] slot = new boolean[n];
 
-        // intialize all slots to be free
+        // Initialize all slots to be free
         Arrays.fill(slot, false);
 
 

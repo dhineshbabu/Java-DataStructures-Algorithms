@@ -61,19 +61,30 @@ public class Prob_02MoreBSTProblems {
     static int prev = Integer.MIN_VALUE;
 
     static boolean isBST(Node root) {
-       /*
-       if inorder traversal if sorted then it is BST
-       in all the iterations check the previous value
-        */
-       if(root == null) return true;
+   /*
+   if inorder traversal if sorted then it is BST
+   in all the iterations check the previous value
 
-       // traverse to the left most node
+   In a BST, for every node, the values in its left subtree are less than or equal to the node's value,
+   and the values in its right subtree are greater than the node's value.
+   The code uses an in-order traversal approach to check if the tree satisfies the conditions of a BST.
+    */
+        if(root == null) return true;
+
+        // traverse to the leftmost node
         if(isBST(root.left) == false) return false;
+
+        // Check if the current node's value is greater than the previous value
         if(root.data <= prev) return false;
-        // assign the prev to the current root
+
+        // Update the previous value to the current root's value
         prev = root.data;
+
+        // Continue the in-order traversal to the right subtree
         return isBST(root.right);
     }
+
+
     // checking
     static Node previous=null,first=null,second=null;
     public static void fixBSTWith2Swpa(Node root)
@@ -127,46 +138,134 @@ public class Prob_02MoreBSTProblems {
 
     }
 
-    public static void vSumR(Node root,int hd,TreeMap<Integer,Integer> mp){
-        if(root==null)return;
-        vSumR(root.left,hd-1,mp);
-        int pSum=(mp.get(hd)==null)?0:mp.get(hd);
-        mp.put(hd,pSum+root.data);
-        vSumR(root.right,hd+1,mp);
+    public static void vSumR(Node root, int hd, TreeMap<Integer, Integer> mp) {
+        if (root == null) {
+            return;
+        }
+
+        // Traverse the left subtree with a decreased horizontal distance (hd)
+        vSumR(root.left, hd - 1, mp);
+
+        // Calculate the sum at the current horizontal distance
+        int currentSum = (mp.get(hd) == null) ? 0 : mp.get(hd);
+        mp.put(hd, currentSum + root.data);
+
+        // Traverse the right subtree with an increased horizontal distance (hd)
+        vSumR(root.right, hd + 1, mp);
     }
 
-    public static void vSum(Node root){
-        TreeMap<Integer,Integer> mp=new TreeMap<Integer,Integer>();
-        vSumR(root,0,mp);
-        for(Map.Entry sum: mp.entrySet())
-            System.out.print(sum.getValue()+" ");
+    public static void vSum(Node root) {
+        // TreeMap to store vertical sums, where keys are horizontal distances
+        TreeMap<Integer, Integer> mp = new TreeMap<Integer, Integer>();
+
+        // Calculate vertical sums recursively starting from the root
+        vSumR(root, 0, mp);
+
+        // Print the vertical sums
+        for (Map.Entry<Integer, Integer> entry : mp.entrySet()) {
+            System.out.print(entry.getValue() + " ");
+        }
     }
 
-    public static void vTraversal(Node root){
+    // Function for vertical traversal of a binary tree
+    public static void vTraversal(Node root) {
+        // Using a queue for level order traversal
+        Queue<Pair> q = new LinkedList<>();
+
+        // Using a TreeMap to store nodes at each horizontal distance
+        Map<Integer, ArrayList<Integer>> mp = new TreeMap<>();
+
+        // Enqueue the root with horizontal distance 0
+        q.add(new Pair(root, 0));
+
+        // Continue until the queue is not empty
+        while (!q.isEmpty()) {
+            // Dequeue a node and its horizontal distance
+            Pair p = q.poll();
+            Node curr = p.node;
+            int hd = p.hd;
+
+            // Add the current node's data to the corresponding horizontal distance in the TreeMap
+            if (mp.containsKey(hd))
+                mp.get(hd).add(curr.data);
+            else {
+                ArrayList<Integer> al = new ArrayList<>();
+                al.add(curr.data);
+                mp.put(hd, al);
+            }
+
+            // Enqueue the left child with a decreased horizontal distance
+            if (curr.left != null)
+                q.add(new Pair(curr.left, hd - 1));
+
+            // Enqueue the right child with an increased horizontal distance
+            if (curr.right != null)
+                q.add(new Pair(curr.right, hd + 1));
+        }
+
+        // Print the nodes at each horizontal distance
+        for (Map.Entry<Integer, ArrayList<Integer>> p : mp.entrySet()) {
+            ArrayList<Integer> al = p.getValue();
+            for (int x : al)
+                System.out.print(x + " ");
+            System.out.println();
+        }
+    }
+
+    // Function for top view of a binary tree
+    public static void topView(Node root) {
+        // Using a queue for level order traversal
+        Queue<Pair> q = new LinkedList<>();
+
+        // Using a TreeMap to store the top view nodes at each horizontal distance
+        Map<Integer, Integer> mp = new TreeMap<>();
+
+        // Enqueue the root with horizontal distance 0
+        q.add(new Pair(root, 0));
+
+        // Continue until the queue is not empty
+        while (!q.isEmpty()) {
+            // Dequeue a node and its horizontal distance
+            Pair p = q.poll();
+            Node curr = p.node;
+            int hd = p.hd;
+
+            // If the horizontal distance is not in the TreeMap, add it
+            if (!mp.containsKey(hd)) {
+                mp.put(hd, curr.data);
+            }
+
+            // Enqueue the left child with a decreased horizontal distance
+            if (curr.left != null)
+                q.add(new Pair(curr.left, hd - 1));
+
+            // Enqueue the right child with an increased horizontal distance
+            if (curr.right != null)
+                q.add(new Pair(curr.right, hd + 1));
+        }
+
+        // Print the nodes at each horizontal distance (top view)
+        for (Map.Entry<Integer, Integer> x : mp.entrySet()) {
+            System.out.print(x.getValue() + " ");
+        }
+    }
+
+    public static void bottomView(Node root){
         Queue<Pair> q=new LinkedList<>();
-        Map<Integer,ArrayList<Integer>> mp=new TreeMap<>();
+        Map<Integer,Integer> mp=new TreeMap<>();
         q.add(new Pair(root,0));
         while(q.isEmpty()==false){
             Pair p=q.poll();
             Node curr=p.node;
             int hd=p.hd;
-            if(mp.containsKey(hd))
-                mp.get(hd).add(curr.data);
-            else{
-                ArrayList<Integer> al=new ArrayList<>();
-                al.add(curr.data);
-                mp.put(hd,al);
-            }
+            mp.put(hd,curr.data); // <- only change to the above code
             if(curr.left!=null)
                 q.add(new Pair(curr.left,hd-1));
             if(curr.right!=null)
                 q.add(new Pair(curr.right,hd+1));
         }
-        for(Map.Entry<Integer,ArrayList<Integer>> p:mp.entrySet()){
-            ArrayList<Integer> al=p.getValue();
-            for(int x: al)
-                System.out.print(x+" ");
-            System.out.println();
+        for(Map.Entry<Integer,Integer> x:mp.entrySet()){
+            System.out.print(x.getValue()+" ");
         }
     }
 

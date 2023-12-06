@@ -1,7 +1,7 @@
 package gfgalgo.graph;
 import java.util.*;
 
-public class Prob_02TopologicalSorting {
+public class  Prob_02TopologicalSorting {
     /*
 
      -- This is also called Khan's Algorithm
@@ -37,7 +37,7 @@ public class Prob_02TopologicalSorting {
                 q.add(i);
 
 
-        while (q.isEmpty()==false) {
+        while (!q.isEmpty()) {
             int u = q.poll();
             // print the current queue element
             System.out.print(u+" ");

@@ -61,4 +61,8 @@ public class Prob_04HuffmanCoding {
         printRec(root.left, s+"0");
         printRec(root.right, s+"1");
     }
+
+    public static void main(String[] args) {
+        printHCodes(new char[]{'a', 'd', 'e', 'f'}, new int[]{30, 40, 80, 60});
+    }
 }

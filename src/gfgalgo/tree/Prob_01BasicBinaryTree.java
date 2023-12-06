@@ -307,6 +307,14 @@ public class Prob_01BasicBinaryTree {
             return lca2;
     }
 
+    public static int getCOunt(Node root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return 1+ getCOunt(root.left) + getCOunt(root.right);
+    }
+
     public static void main(String[] args) {
         Node root = new Node(10);
         root.left = new Node(20);
@@ -341,6 +349,7 @@ public class Prob_01BasicBinaryTree {
 
         System.out.println("Max is " + getMax(root));
         System.out.println("Is balanced: " + isBalanced(root));
+        System.out.println("Count is: " + getCOunt(root));
     }
 
 }

@@ -39,39 +39,56 @@ public class Prob_01MinHeap {
         }
     }
 
-    public void minHeapify(int i)
-    {
+    public void minHeapify(int i) {
+        // Calculate the indices of the left and right children of node i
         int lt = left(i);
         int rt = right(i);
+
+        // Assume the current node i is the smallest
         int smallest = i;
+
+        // Compare the value at the left child with the value at the current node
         if (lt < size && arr[lt] < arr[i])
             smallest = lt;
+
+        // Compare the value at the right child with the value at the smallest so far
         if (rt < size && arr[rt] < arr[smallest])
             smallest = rt;
-        if (smallest != i)
-        {
+
+        // If the current node is not the smallest, swap its value with the smallest
+        if (smallest != i) {
             int temp = arr[i];
             arr[i] = arr[smallest];
             arr[smallest] = temp;
+
+            // Recursively call minHeapify on the affected subtree
             minHeapify(smallest);
         }
     }
 
-    public int extractMin()
-    {
+    public int extractMin() {
+        // Check if the heap is empty
         if (size <= 0)
             return Integer.MAX_VALUE;
-        if (size == 1)
-        {
+
+        // If there is only one element in the heap
+        if (size == 1) {
             size--;
             return arr[0];
         }
+
+        // Swap the root (minimum element) with the last element
         int temp = arr[0];
-        arr[0] = arr[size-1];
-        arr[size-1] = temp;
+        arr[0] = arr[size - 1];
+        arr[size - 1] = temp;
+
+        // Decrease the size of the heap
         size--;
+
+        // Restore the min-heap property by calling minHeapify on the root
         minHeapify(0);
 
+        // Return the extracted minimum element
         return arr[size];
     }
 
@@ -80,16 +97,26 @@ public class Prob_01MinHeap {
             minHeapify(i);
     }
 
-    void decreaseKey(int i, int x)
-    {
+    void decreaseKey(int i, int x) {
+        // Update the value at index i with the new value x
         arr[i] = x;
-        while (i != 0 && arr[parent(i)] > arr[i])
-        {
+
+        // Continue the loop as long as i is not the root and the parent's value is greater than the current value
+        while (i != 0 && arr[parent(i)] > arr[i]) {
+            // Swap the current value with its parent
             int temp = arr[i];
             arr[i] = arr[parent(i)];
             arr[parent(i)] = temp;
+
+            // Move up the tree to the parent
             i = parent(i);
         }
+    }
+
+    void deleteKey(int i)
+    {
+        decreaseKey(i, Integer.MIN_VALUE);
+        extractMin();
     }
 
     public static void main(String args[])
