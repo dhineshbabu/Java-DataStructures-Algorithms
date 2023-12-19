@@ -498,6 +498,18 @@
 
 <hr />
 
+### Binary Indexed Tree
+
+* used for fixed input array and multiple queries of the following types
+  * Prefix operations(Sum, product, XOR, OR, etc)
+  * update a values
+* It is actually an array, but the concept is tree based
+* Requires O(n logn) preprocessing time an ø(n) auxiliary space
+* Also known as Fenwick tree
+
+
+<hr />
+
 ### Disjoint Set
 
 * operations
