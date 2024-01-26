@@ -1,4 +1,4 @@
-package gfgalgo.mathematics;
+package gfgalgo.module01mathematics;
 
 public class Prob_01CountDigits {
     /*

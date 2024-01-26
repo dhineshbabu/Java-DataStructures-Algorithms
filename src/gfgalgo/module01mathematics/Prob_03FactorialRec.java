@@ -1,4 +1,4 @@
-package gfgalgo.mathematics;
+package gfgalgo.module01mathematics;
 
 public class Prob_03FactorialRec {
     public static int fact(int n) {

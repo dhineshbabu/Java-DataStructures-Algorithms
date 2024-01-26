@@ -1,4 +1,4 @@
-package gfgalgo.mathematics;
+package gfgalgo.module01mathematics;
 
 public class Prob_05PrimeNumber {
     public static boolean isPrime(int n) {
