@@ -52,7 +52,8 @@
 
 * Random Access - accessing elements are O(1)
 * When arrays used, modern processors prefetch the items in cache
-
+* Arrays are stored in heap in java
+* It is recommended to use ArrayList whenever possible
 * Array Types:
     * Fixed Size Arrays
     * Dynamic Sized Arrays (ArrayList)
