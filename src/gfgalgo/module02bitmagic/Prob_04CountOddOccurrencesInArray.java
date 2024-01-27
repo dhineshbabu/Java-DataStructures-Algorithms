@@ -1,4 +1,4 @@
-package gfgalgo.bitmagic;
+package gfgalgo.module02bitmagic;
 
 public class Prob_04CountOddOccurrencesInArray {
     /*
@@ -10,7 +10,7 @@ public class Prob_04CountOddOccurrencesInArray {
      */
     public static int oddOccurrences(int[] arr) {
         int res = arr[0];
-        for(int i=1; i<arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             res = res ^ arr[i];
         }
         return res;
@@ -21,26 +21,26 @@ public class Prob_04CountOddOccurrencesInArray {
         int x = arr[0];
 
         //create an xor of all the numbers in the array
-        for(int i=1; i<arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             x = x ^ arr[i];
         }
 
         // find a number which has only 1 bit set and the set bit corresponds to the last set bit of x
-        int k = (x & ~(x-1));
+        int k = (x & ~(x - 1));
 
         // create 2 variables to store the w result numbers
-        int res1=0, res2=0;
+        int res1 = 0, res2 = 0;
 
-        for(int i=0; i<arr.length; i++){
-            if((arr[i] & k) != 0) res1 = res1 ^ arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            if ((arr[i] & k) != 0) res1 = res1 ^ arr[i];
             else res2 = res2 ^ arr[i];
         }
 
-        System.out.println(res1+" "+res2);
+        System.out.println(res1 + " " + res2);
     }
 
     public static void main(String[] args) {
-        System.out.println(oddOccurrences(new int[] {4,4,4,5,5,6,6,8,8}));
-        twoOddOccurrences(new int[] {4,4,4,5,5,6,6,6,8,8});
+        System.out.println(oddOccurrences(new int[]{4, 4, 4, 5, 5, 6, 6, 8, 8}));
+        twoOddOccurrences(new int[]{4, 4, 4, 5, 5, 6, 6, 6, 8, 8});
     }
 }

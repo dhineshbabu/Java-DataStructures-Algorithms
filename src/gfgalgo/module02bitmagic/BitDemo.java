@@ -1,10 +1,10 @@
-package gfgalgo.bitmagic;
+package gfgalgo.module02bitmagic;
 
 public class BitDemo {
     public static void main(String[] args) {
         // Bitwise AND
-        int x=3, y=6;
-        System.out.println(x&y); // 2
+        int x = 3, y = 6;
+        System.out.println(x & y); // 2
 
         //Bitwise OR
         System.out.println(x | y);

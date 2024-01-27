@@ -1,7 +1,7 @@
-package gfgalgo.bitmagic;
+package gfgalgo.module02bitmagic;
 
 public class Prob_05PowerSetUsingBitwise {
-    public  static void powerSet(String s) {
+    public static void powerSet(String s) {
         int n = s.length();
 
         // Calculate the size of the power set, which is 2^n - e.g for 4 it will be 16 combinations

@@ -1,4 +1,4 @@
-package gfgalgo.bitmagic;
+package gfgalgo.module02bitmagic;
 
 import java.util.Arrays;
 
