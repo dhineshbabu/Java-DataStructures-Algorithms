@@ -12,7 +12,7 @@ public class Prob_20EquilibriumPoint {
         int n = arr.length;
         int rs = 0;
 
-        // calcualte the right sum
+        // calcualte the right sum as total sum
         for (int i = 0; i < n; i++) {
             rs += arr[i];
         }

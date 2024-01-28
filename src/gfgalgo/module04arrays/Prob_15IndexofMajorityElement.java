@@ -5,7 +5,7 @@ public class Prob_15IndexofMajorityElement {
     Majority of an element is its presence for more than n/2 occurrences in an array
 
     // Moore’s Voting Algorithm
-       // if the majority of element is presented then it will be atleast in 1 consecutive position ( more tjann/2) in an array
+       // if the majority of element is presented then it will be atleast in 1 consecutive position ( more than n/2) in an array
 
     // phase 1:
         for loop - identify the candidate
