@@ -27,6 +27,65 @@ public class DemoClass {
         return res;
     }
 
+    static int bSearchRec(int[] arr, int low, int high, int item) {
+        // basecase
+        if (low > high) {
+            return -1;
+        }
+
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == item) return mid;
+        else {
+            return (arr[mid] > item) ? bSearchRec(arr, low, mid - 1, item) : bSearchRec(arr, mid + 1, high, item);
+        }
+    }
+
+    public static void bubble(int[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            boolean swapped = false;
+
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                    swapped = true;
+                }
+
+                if (!swapped) {
+                    break;
+                }
+            }
+        }
+    }
+
+    public static void mergeArrays(int[] a, int[] b) {
+        int i = 0, j = 0;
+        int m = a.length, n = b.length;
+
+        while (i < m && j < n) {
+            if (a[i] <= b[j]) {
+                System.out.print(a[i] + " ");
+                i++;
+            } else {
+                System.out.print(b[j] + " ");
+                j++;
+            }
+        }
+
+        while (i < m) {
+            System.out.print(a[i] + " ");
+            i++;
+        }
+
+        while (j < n) {
+            System.out.print(b[j] + " ");
+            j++;
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -38,5 +97,19 @@ public class DemoClass {
         int[] arr = {10, 20, 20, 30, 30, 30};
         System.out.println(removeArrDuplicates(arr));
         System.out.println(Arrays.toString(arr));
+
+
+        int[] arr1 = {10, 20, 30, 40, 50, 65, 70};
+        System.out.println(bSearchRec(arr1, 0, arr.length - 1, 65));
+        System.out.println(Arrays.binarySearch(arr1, 25));
+
+        int a[] = {2, 1, 4, 3};
+        bubble(a);
+        System.out.println(Arrays.toString(a));
+
+        int[] a1 = {10, 20, 30};
+        int[] b1 = {5, 50, 60};
+
+        mergeArrays(a1, b1);
     }
 }

@@ -86,6 +86,7 @@
 
 * Sorting in java:
     * Arrays.sort
+        * It uses dual-pivot quick sort
         * primitive not allowed with comparator
             * For reverse order
                 * ```Arrays.sort(arr, Collections.reverseOrder())```
