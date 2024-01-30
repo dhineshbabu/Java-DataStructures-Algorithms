@@ -87,9 +87,11 @@ public class DemoClass {
         }
     }
 
+
     public static void main(String[] args) {
 
 
+        /*
         int[] nums = {10, 20, 15, 5};
         int sum = 25;
         System.out.println(subset(nums, nums.length, sum));
@@ -111,5 +113,9 @@ public class DemoClass {
         int[] b1 = {5, 50, 60};
 
         mergeArrays(a1, b1);
+
+        */
+
+
     }
 }

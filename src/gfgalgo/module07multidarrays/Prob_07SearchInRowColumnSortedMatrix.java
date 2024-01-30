@@ -1,4 +1,4 @@
-package gfgalgo.multidarrays;
+package gfgalgo.module07multidarrays;
 
 public class Prob_07SearchInRowColumnSortedMatrix {
     /*
@@ -35,8 +35,7 @@ public class Prob_07SearchInRowColumnSortedMatrix {
         System.out.println("Not Found");
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         int arr[][] = {{10, 20, 30, 40},
                 {15, 25, 35, 45},
                 {27, 29, 35, 45},

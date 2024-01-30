@@ -1,4 +1,4 @@
-package gfgalgo.multidarrays;
+package gfgalgo.module07multidarrays;
 
 public class Prob_05Rotate90AntiClock {
 
@@ -34,7 +34,6 @@ public class Prob_05Rotate90AntiClock {
 
         for (int i = 0; i < n; i++) {
             int low = 0, high = n - 1;
-
             while (low < high) {
                 swap2(low, high, i, mat);
                 low++;

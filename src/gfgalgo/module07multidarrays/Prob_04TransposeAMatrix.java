@@ -1,4 +1,4 @@
-package gfgalgo.multidarrays;
+package gfgalgo.module07multidarrays;
 
 public class Prob_04TransposeAMatrix {
 
@@ -13,15 +13,14 @@ public class Prob_04TransposeAMatrix {
      */
 
     static int n = 4;
-    static void swap(int mat[][], int i, int j)
-    {
+
+    static void swap(int mat[][], int i, int j) {
         int temp = mat[i][j];
         mat[i][j] = mat[j][i];
         mat[j][i] = temp;
     }
 
-    static void transpose(int mat[][])
-    {
+    static void transpose(int mat[][]) {
 
         // Iterate over the upper triangular part of the matrix
         for (int i = 0; i < n; i++) {
@@ -40,11 +39,9 @@ public class Prob_04TransposeAMatrix {
 
         transpose(arr);
 
-        for(int i = 0; i < n; i++)
-        {
-            for(int j = 0; j < n; j++)
-            {
-                System.out.print(arr[i][j]+" ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(arr[i][j] + " ");
             }
 
             System.out.println();

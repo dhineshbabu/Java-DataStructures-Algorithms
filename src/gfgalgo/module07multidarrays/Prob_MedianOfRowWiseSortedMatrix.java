@@ -1,4 +1,4 @@
-package gfgalgo.multidarrays;
+package gfgalgo.module07multidarrays;
 
 import java.util.*;
 
@@ -6,15 +6,15 @@ public class Prob_MedianOfRowWiseSortedMatrix {
 
     static public int matMed(int mat[][], int r, int c) {
         // Initialize min and max values
-        int min = mat[0][0], max = mat[0][c-1];
+        int min = mat[0][0], max = mat[0][c - 1];
 
         // Find the minimum and maximum values in the first column and last column
         for (int i = 1; i < r; i++) {
             if (mat[i][0] < min)
                 min = mat[i][0];
 
-            if (mat[i][c-1] > max)
-                max = mat[i][c-1];
+            if (mat[i][c - 1] > max)
+                max = mat[i][c - 1];
         }
 
         // Calculate the position of the median element
@@ -58,7 +58,7 @@ public class Prob_MedianOfRowWiseSortedMatrix {
     public static void main(String[] args) {
         // Test data
         int r = 3, c = 5;
-        int m[][]= { {5,10,20,30,40}, {1,2,3,4,6}, {11,13,15,17,19} };
+        int m[][] = {{5, 10, 20, 30, 40}, {1, 2, 3, 4, 6}, {11, 13, 15, 17, 19}};
 
         // Call matMed function and print the result
         System.out.println("Median is " + matMed(m, r, c));
