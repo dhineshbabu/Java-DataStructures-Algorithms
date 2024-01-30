@@ -1,7 +1,8 @@
-package gfgalgo.hashing;
+package gfgalgo.module08hashing;
+
 import java.util.*;
 
-public class Prob_LargestCommonSubArrayWithGivenSum {
+public class Prob_11LargestCommonSubArrayWithGivenSum {
 
     /*
     Idea is to compute the difference array and call it as temp
@@ -10,8 +11,7 @@ public class Prob_LargestCommonSubArrayWithGivenSum {
 
     // Returns largest common subarray with equal
     // number of 0s and 1s
-    static int longestCommonSum(int[] arr1, int[] arr2, int n)
-    {
+    static int longestCommonSum(int[] arr1, int[] arr2, int n) {
         // Find difference between the two
         int[] arr = new int[n];
         for (int i = 0; i < n; i++)
@@ -20,12 +20,11 @@ public class Prob_LargestCommonSubArrayWithGivenSum {
         // Creates an empty hashMap hM
         HashMap<Integer, Integer> hM = new HashMap<>();
 
-        int sum = 0;	 // Initialize sum of elements
+        int sum = 0;     // Initialize sum of elements
         int max_len = 0; // Initialize result
 
         // Traverse through the given array
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             // Add current element to sum
             sum += arr[i];
 
@@ -45,8 +44,7 @@ public class Prob_LargestCommonSubArrayWithGivenSum {
     }
 
     // Driver code
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         int[] arr1 = {0, 1, 0, 1, 1, 1, 1};
         int[] arr2 = {1, 1, 1, 1, 1, 0, 1};
         int n = arr1.length;

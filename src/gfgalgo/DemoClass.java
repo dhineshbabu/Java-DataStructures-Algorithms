@@ -1,6 +1,8 @@
 package gfgalgo;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class DemoClass {
     public static int subset(int[] arr, int n, int sum) {
@@ -87,6 +89,28 @@ public class DemoClass {
         }
     }
 
+    public static void hashDemo() {
+        HashSet<Integer> h = new HashSet<>();
+        h.add(40);
+        h.add(20);
+        h.add(30);
+
+        System.out.println(h.size());
+
+        h.add(50);
+        h.add(30);
+        h.add(30);
+
+        Iterator<Integer> it = h.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+        Integer[] arr = h.toArray(new Integer[]{});
+        System.out.println("here");
+        System.out.println(Arrays.toString(arr));
+    }
+
 
     public static void main(String[] args) {
 
@@ -115,6 +139,8 @@ public class DemoClass {
         mergeArrays(a1, b1);
 
         */
+
+        hashDemo();
 
 
     }

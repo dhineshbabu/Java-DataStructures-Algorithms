@@ -1,9 +1,10 @@
-package gfgalgo.hashing;
+package gfgalgo.module08hashing;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Prob_LongestConsecutiveSubsequence {
+public class Prob_12LongestConsecutiveSubsequence {
     /*
     Idea is
     1. Insert all the elements in a hash table
@@ -35,8 +36,29 @@ public class Prob_LongestConsecutiveSubsequence {
         return res;
     }
 
+
+    public static int longestSubNaiveMethod(int[] arr) {
+        Arrays.sort(arr);
+        int res = 0;
+        int curr = 1;
+        for (int i = 1; i < arr.length; i++) {
+
+            if (arr[i] == arr[i - 1]) {
+                curr++;
+            } else {
+                res = Math.max(res, curr);
+                curr = 1;
+            }
+        }
+        return res;
+
+    }
+
     public static void main(String[] args) {
         int arr[] = new int[]{1, 9, 3, 4, 2, 10, 13};
         System.out.println(longestSub(arr));
+
+        int arr1[] = new int[]{1, 9, 3, 4, 2, 10, 13};
+        System.out.println(longestSubNaiveMethod(arr1));
     }
 }

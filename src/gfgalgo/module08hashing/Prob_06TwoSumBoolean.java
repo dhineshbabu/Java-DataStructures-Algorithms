@@ -1,11 +1,11 @@
-package gfgalgo.hashing;
+package gfgalgo.module08hashing;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Prob_TwoSum {
+public class Prob_06TwoSumBoolean {
     public static void main(String[] args) {
-        int[] arr = {8,3,9,4};
+        int[] arr = {8, 3, 9, 4};
 
         int sum = 13;
 
@@ -14,8 +14,8 @@ public class Prob_TwoSum {
 
         //create hashmap
         for (int i = 0; i < arr.length; i++) {
-            int complement = sum-arr[i];
-            if(s.contains(complement)) {
+            int complement = sum - arr[i];
+            if (s.contains(complement)) {
                 System.out.println("True");
             } else {
                 s.add(arr[i]);

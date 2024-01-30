@@ -1,6 +1,4 @@
-package gfgalgo.hashing;
-
-import com.sun.net.httpserver.Filter;
+package gfgalgo.module08hashing;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -18,7 +16,7 @@ public class ChainingImplementation {
         BUCKET = b; // assuming that the bucket size is provided by the user
         table = new ArrayList<>();
         // add an empty LinkedList to the array list for chaining
-        for(int i=0; i<b; i++) {
+        for (int i = 0; i < b; i++) {
             table.add(new LinkedList<Integer>());
         }
 
@@ -30,12 +28,12 @@ public class ChainingImplementation {
     }
 
     boolean search(int key) {
-        int i = key%BUCKET;
+        int i = key % BUCKET;
         return table.get(i).contains(key);
     }
 
     void remove(int key) {
-        int i = key%BUCKET;
+        int i = key % BUCKET;
         table.get(i).remove((Integer) i);
     }
 

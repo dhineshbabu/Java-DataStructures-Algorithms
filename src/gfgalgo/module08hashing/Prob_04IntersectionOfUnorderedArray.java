@@ -1,8 +1,8 @@
-package gfgalgo.hashing;
+package gfgalgo.module08hashing;
 
 import java.util.HashSet;
 
-public class Prob_IntersectionOfUnorderedArray {
+public class Prob_04IntersectionOfUnorderedArray {
     /*
     Question also states that we need to print in the same order in array 1
 
@@ -15,7 +15,7 @@ public class Prob_IntersectionOfUnorderedArray {
      */
 
     public static void main(String[] args) {
-        int a[] = {10,20,30};
+        int a[] = {10, 20, 30};
         int[] b = {30, 10};
 
         HashSet<Integer> hs = new HashSet<>();
@@ -27,7 +27,7 @@ public class Prob_IntersectionOfUnorderedArray {
         // loop through the second array now
 
         for (int i = 0; i < a.length; i++) {
-            if(hs.contains(i)) {
+            if (hs.contains(i)) {
                 System.out.println(a[i]);
             }
         }

@@ -1,19 +1,18 @@
-package gfgalgo.hashing;
+package gfgalgo.module08hashing;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 
-public class Prob_FreqOfArrayElements {
+public class Prob_02FreqOfArrayElements {
     static void count(int[] arr) {
         // initiate an hashmap
         HashMap<Integer, Integer> hm = new HashMap();
-        for(int i: arr){
-            hm.put(i, hm.getOrDefault(i, 0)+1);
+        for (int i : arr) {
+            hm.put(i, hm.getOrDefault(i, 0) + 1);
         }
 
-        for(Map.Entry<Integer, Integer> e: hm.entrySet()) {
-            System.out.println("["+e.getKey()+","+e.getValue()+"]");
+        for (Map.Entry<Integer, Integer> e : hm.entrySet()) {
+            System.out.println("[" + e.getKey() + "," + e.getValue() + "]");
         }
     }
 
