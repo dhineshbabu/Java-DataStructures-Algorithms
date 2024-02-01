@@ -1,4 +1,4 @@
-package gfgalgo.strings;
+package gfgalgo.module09strings;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class Prob_LongestSubstringWithDistinctChars {
      */
 
     static int longestDistinct(String str) {
-        int n=str.length(), res = 0;
+        int n = str.length(), res = 0;
 
         int[] prev = new int[256];
 
@@ -23,8 +23,8 @@ public class Prob_LongestSubstringWithDistinctChars {
         // loop through the string
         for (int j = 0; j < n; j++) {
             // calculate the previous position if the character is occurred again
-            i = Math.max(i, prev[str.charAt(j)]+1); // to calculate the unique length doe speciic char
-            int maxEnd = j-i + 1; // current- previous position of this character
+            i = Math.max(i, prev[str.charAt(j)] + 1); // to calculate the unique length doe speciic char
+            int maxEnd = j - i + 1; // current- previous position of this character
 
             res = Math.max(res, maxEnd);
 
@@ -35,10 +35,9 @@ public class Prob_LongestSubstringWithDistinctChars {
         return res;
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         String str = "geeksforgeeks";
         int len = longestDistinct(str);
-        System.out.print("The length of the longest distinct characters substring is "+ len);
+        System.out.print("The length of the longest distinct characters substring is " + len);
     }
 }

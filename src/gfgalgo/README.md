@@ -178,6 +178,18 @@
     * StringBuffer class - mutable and threadsafe
     * StringBuilder class - mutable and not threadsafe - good for single threaded programs
 * pattern searching algorithms (Naive, Improved Naive for Distinct, Rabin Karp and KMP).
+* Methods in String Class:
+    * str.length()
+    * str.chatAt(3)
+    * str.subString(2)
+    * str.subString(2, 5)
+    * s1.equals(s2)
+    * s1.contains(s2)
+    * s1.compareTo(s2) - Lexicographically compare 2 strings
+    * s1.indexOf(s1)
+    * s1.indexOf(s1, 1)
+    * s1.lastIndexOf(s2)
+    * s1.concat(s2)
 
 <hr />
 

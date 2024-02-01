@@ -1,6 +1,6 @@
-package gfgalgo.strings;
+package gfgalgo.module09strings;
 
-public class Prob_CheckForRotation  {
+public class Prob_CheckForRotation {
     /*
     rotate any time counter clock wise and check if they are matching
 
@@ -8,9 +8,9 @@ public class Prob_CheckForRotation  {
      */
 
     static boolean areRotations(String s1, String s2) {
-        if(s1.length() != s2.length()) return false;
+        if (s1.length() != s2.length()) return false;
 
-        return ((s1+s1).indexOf(s2) >= 0);
+        return ((s1 + s1).indexOf(s2) >= 0);
     }
 
 

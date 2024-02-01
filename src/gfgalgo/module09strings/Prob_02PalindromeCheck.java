@@ -1,6 +1,6 @@
-package gfgalgo.strings;
+package gfgalgo.module09strings;
 
-public class Prob_PalindromeCheck {
+public class Prob_02PalindromeCheck {
     /*
     Use 2 pointers and compare the left and right elements
     if they are not equal then false
@@ -11,9 +11,9 @@ public class Prob_PalindromeCheck {
 
     static boolean isPalindrome(String str) {
         int begin = 0;
-        int end = str.length()-1;
-        while(begin <= end) {
-            if(str.charAt(begin) == str.charAt(end)) {
+        int end = str.length() - 1;
+        while (begin <= end) {
+            if (str.charAt(begin) == str.charAt(end)) {
                 return true;
             }
             begin++;
