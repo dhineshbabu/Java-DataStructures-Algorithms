@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -18,15 +18,15 @@ public class Prob_09PreviousGreaterElement {
         // push the first element and print -1
         Deque<Integer> stack = new ArrayDeque<>();
         stack.push(arr[0]);
-        System.out.print("-1 " );
+        System.out.print("-1 ");
 
-        for(int i=1; i<n; i++){
-            while(!stack.isEmpty() && arr[i] >= stack.peek()) {
+        for (int i = 1; i < n; i++) {
+            while (!stack.isEmpty() && arr[i] >= stack.peek()) {
                 stack.pop();
             }
 
             int greaterElement = stack.isEmpty() ? -1 : stack.peek();
-            System.out.print(greaterElement+" ");
+            System.out.print(greaterElement + " ");
             stack.push(arr[i]);
         }
     }

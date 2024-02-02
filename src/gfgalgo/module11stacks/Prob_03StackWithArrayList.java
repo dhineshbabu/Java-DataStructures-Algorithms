@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,8 @@ public class Prob_03StackWithArrayList {
     }
 
     int pop() {
-        int data = al.get(al.size()-1);
-        al.remove(al.size()-1);
+        int data = al.get(al.size() - 1);
+        al.remove(al.size() - 1);
         return data;
     }
 
@@ -20,10 +20,10 @@ public class Prob_03StackWithArrayList {
     }
 
     int peek() {
-        return al.get(al.size()-1);
+        return al.get(al.size() - 1);
     }
 
-    int size(){
+    int size() {
         return al.size();
     }
 }

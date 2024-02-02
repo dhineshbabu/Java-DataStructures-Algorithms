@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

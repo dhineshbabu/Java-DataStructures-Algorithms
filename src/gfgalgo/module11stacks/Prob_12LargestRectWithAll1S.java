@@ -1,5 +1,6 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
+import java.util.*;
 import java.util.Stack;
 
 public class Prob_12LargestRectWithAll1S {
@@ -10,12 +11,11 @@ public class Prob_12LargestRectWithAll1S {
     // Finds the maximum area under the histogram
     // represented by histogram.  See below article for
 
-    static int maxHist(int R, int C, int row[])
-    {
+    static int maxHist(int R, int C, int row[]) {
         // Create an empty stack. The stack holds indexes of
         // hist[] array/ The bars stored in stack are always
         // in increasing order of their heights.
-        Stack<Integer> result = new Stack<Integer>();
+        Deque<Integer> result = new ArrayDeque<>();
 
         int top_val; // Top of stack
 
@@ -29,7 +29,7 @@ public class Prob_12LargestRectWithAll1S {
         while (i < C) {
             // If this bar is higher than the bar on top
             // stack, push it to stack
-            if (result.empty()
+            if (result.isEmpty()
                     || row[result.peek()] <= row[i])
                 result.push(i++);
 
@@ -44,7 +44,7 @@ public class Prob_12LargestRectWithAll1S {
                 result.pop();
                 area = top_val * i;
 
-                if (!result.empty())
+                if (!result.isEmpty())
                     area
                             = top_val * (i - result.peek() - 1);
                 max_area = Math.max(area, max_area);
@@ -54,11 +54,11 @@ public class Prob_12LargestRectWithAll1S {
         // Now pop the remaining bars from stack and
         // calculate area with every popped bar as the
         // smallest bar
-        while (!result.empty()) {
+        while (!result.isEmpty()) {
             top_val = row[result.peek()];
             result.pop();
             area = top_val * i;
-            if (!result.empty())
+            if (!result.isEmpty())
                 area = top_val * (i - result.peek() - 1);
 
             max_area = Math.max(area, max_area);
@@ -68,8 +68,7 @@ public class Prob_12LargestRectWithAll1S {
 
     // Returns area of the largest rectangle with all 1s in
     // A[][]
-    static int maxRectangle(int R, int C, int A[][])
-    {
+    static int maxRectangle(int R, int C, int A[][]) {
         // Calculate area for first row and initialize it as
         // result
         int result = maxHist(R, C, A[0]);
@@ -93,16 +92,15 @@ public class Prob_12LargestRectWithAll1S {
     }
 
     // Driver code
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         int R = 4;
         int C = 4;
 
         int A[][] = {
-                { 0, 1, 1, 0 },
-                { 1, 1, 1, 1 },
-                { 1, 1, 1, 1 },
-                { 1, 1, 0, 0 },
+                {0, 1, 1, 0},
+                {1, 1, 1, 1},
+                {1, 1, 1, 1},
+                {1, 1, 0, 0},
         };
         System.out.print("Area of maximum rectangle is "
                 + maxRectangle(R, C, A));

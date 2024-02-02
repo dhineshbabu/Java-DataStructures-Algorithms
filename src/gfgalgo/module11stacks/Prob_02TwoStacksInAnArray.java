@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
 public class Prob_02TwoStacksInAnArray {
     /*
@@ -10,15 +10,15 @@ public class Prob_02TwoStacksInAnArray {
     private int capacity, top1, top2;
 
     // constructor
-    Prob_02TwoStacksInAnArray(int n){
+    Prob_02TwoStacksInAnArray(int n) {
         capacity = n;
         top1 = -1;
         top2 = n;
         arr = new int[n];
     }
 
-    boolean push1(int x){
-        if(top1 < top2) {
+    boolean push1(int x) {
+        if (top1 < top2) {
             top1++;
             arr[top1] = x;
             return true;
@@ -26,8 +26,8 @@ public class Prob_02TwoStacksInAnArray {
         return false;
     }
 
-    boolean push2(int x){
-        if(top1<top2-1) {
+    boolean push2(int x) {
+        if (top1 < top2 - 1) {
             top2--;
             arr[top2] = x;
             return true;
@@ -37,7 +37,7 @@ public class Prob_02TwoStacksInAnArray {
     }
 
     Integer pop1() {
-        if(top1 >= 0) {
+        if (top1 >= 0) {
             int x = arr[top1];
             top1--;
             return x;
@@ -46,7 +46,7 @@ public class Prob_02TwoStacksInAnArray {
     }
 
     Integer pop2() {
-        if(top2 < capacity) {
+        if (top2 < capacity) {
             int x = arr[top2];
             top2++;
             return x;
@@ -55,7 +55,7 @@ public class Prob_02TwoStacksInAnArray {
     }
 
     int size1() {
-        return top1+1;
+        return top1 + 1;
     }
 
     int size2() {

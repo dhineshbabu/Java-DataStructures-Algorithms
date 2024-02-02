@@ -1,4 +1,5 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
+
 import java.util.*;
 
 public class InfixToPostFix {

@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 // Node class
 
 public class Prob_04StackWithLinkedList {
@@ -16,7 +16,7 @@ public class Prob_04StackWithLinkedList {
         }
     }
 
-    class MyStack{
+    class MyStack {
         Node head;
         int size;
 
@@ -30,11 +30,11 @@ public class Prob_04StackWithLinkedList {
             return size;
         }
 
-        boolean isEmpty (){
+        boolean isEmpty() {
             return (head == null);
         }
 
-        void push(int x){
+        void push(int x) {
             Node temp = new Node(x);
             temp.next = head;
             temp = head;
@@ -42,7 +42,7 @@ public class Prob_04StackWithLinkedList {
         }
 
         int pop() {
-            if(head == null) {
+            if (head == null) {
                 return Integer.MAX_VALUE;
             }
             int res = head.data;
@@ -52,7 +52,7 @@ public class Prob_04StackWithLinkedList {
         }
 
         int peek() {
-            if(head == null) {
+            if (head == null) {
                 return Integer.MAX_VALUE;
             }
 

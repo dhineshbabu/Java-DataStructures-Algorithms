@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
 public class Prob_14EvaluationOfPrefix {
 

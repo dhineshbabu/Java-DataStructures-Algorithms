@@ -189,7 +189,7 @@
     * s1.indexOf(s1)
     * s1.indexOf(s1, 1)
     * s1.lastIndexOf(s2)
-    * s1.concat(s2)
+    * s1.concat(s2 )
 
 <hr />
 

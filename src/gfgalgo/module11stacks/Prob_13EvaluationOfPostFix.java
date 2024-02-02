@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
 public class Prob_13EvaluationOfPostFix {
     /*
@@ -12,6 +12,7 @@ public class Prob_13EvaluationOfPostFix {
     private int top;
     private int capacity;
     private String[] array;
+
     public Prob_13EvaluationOfPostFix(int capacity) {
         top = -1;
         this.capacity = capacity;
@@ -29,9 +30,8 @@ public class Prob_13EvaluationOfPostFix {
     public String pop() {
         if (!isEmpty()) {
             top--;
-            return array[top+1];
-        }
-        else {
+            return array[top + 1];
+        } else {
             return "$";
         }
     }
@@ -51,7 +51,7 @@ public class Prob_13EvaluationOfPostFix {
                 int result;
                 int int_val1 = Integer.parseInt(val1);
                 int int_val2 = Integer.parseInt(val2);
-                switch(exp.charAt(i)) {
+                switch (exp.charAt(i)) {
                     case '+':
                         result = int_val2 + int_val1;
                         break;

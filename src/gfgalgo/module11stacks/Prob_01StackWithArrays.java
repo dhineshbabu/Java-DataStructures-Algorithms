@@ -1,4 +1,4 @@
-package gfgalgo.stacks;
+package gfgalgo.module11stacks;
 
 public class Prob_01StackWithArrays {
     int[] arr;
@@ -6,7 +6,7 @@ public class Prob_01StackWithArrays {
     int top;
 
     // constructor
-    Prob_01StackWithArrays(int capacity){
+    Prob_01StackWithArrays(int capacity) {
         this.capacity = capacity;
         top = -1;
         arr = new int[capacity];
@@ -15,8 +15,8 @@ public class Prob_01StackWithArrays {
     // operations
 
     // push
-    void push(int data){
-        if(top == capacity-1){
+    void push(int data) {
+        if (top == capacity - 1) {
             System.out.println("Overflow");
         }
         top++;
@@ -25,7 +25,7 @@ public class Prob_01StackWithArrays {
 
     // pop
     int pop() {
-        if(top == -1) {
+        if (top == -1) {
             System.out.println("Underflow");
         }
         int data = arr[top];
@@ -34,15 +34,15 @@ public class Prob_01StackWithArrays {
     }
 
     int size() {
-        return top+1;
+        return top + 1;
     }
 
-    boolean isEmpty(){
+    boolean isEmpty() {
         return (top == -1);
     }
 
     int peek() {
-        if(top == -1) {
+        if (top == -1) {
             System.out.println("Underflow");
         }
         return arr[top];
