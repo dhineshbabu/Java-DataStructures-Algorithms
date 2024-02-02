@@ -1,4 +1,4 @@
-package gfgalgo.linkedlist;
+package gfgalgo.module10linkedlist;
 
 public class Prob_06FloydCycleDetectionLL {
     /*
@@ -40,35 +40,35 @@ public class Prob_06FloydCycleDetectionLL {
          */
         Node slow = head, fast = head;
 
-        while(fast!= null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
-            if(slow == fast) {
+            if (slow == fast) {
                 break; // there is a loop
             }
         }
 
-        if(slow != fast) {
-            return ; //there is no loop
+        if (slow != fast) {
+            return; //there is no loop
         }
 
         // else move the slow pointer to the head
         slow = head;
         // loop until they are  equal
-        while(slow.next != fast.next) {
+        while (slow.next != fast.next) {
             slow = slow.next;
             fast = fast.next;
         }
         fast.next = null;
     }
-    public static void main(String args[])
-    {
-        Node head=new Node(15);
-        head.next=new Node(10);
-        head.next.next=new Node(12);
-        head.next.next.next=new Node(20);
-        head.next.next.next.next=head.next; // here's the loop
+
+    public static void main(String args[]) {
+        Node head = new Node(15);
+        head.next = new Node(10);
+        head.next.next = new Node(12);
+        head.next.next.next = new Node(20);
+        head.next.next.next.next = head.next; // here's the loop
         if (isLoop(head))
             System.out.print("Loop found");
         else

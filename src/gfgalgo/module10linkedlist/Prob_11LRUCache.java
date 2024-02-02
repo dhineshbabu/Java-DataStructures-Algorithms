@@ -1,4 +1,5 @@
-package gfgalgo.linkedlist;
+package gfgalgo.module10linkedlist;
+
 import java.util.*;
 
 public class Prob_11LRUCache {

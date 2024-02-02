@@ -1,4 +1,4 @@
-package gfgalgo.linkedlist;
+package gfgalgo.module10linkedlist;
 
 /*
 data and next
@@ -17,6 +17,7 @@ class Node {
         next = null;
     }
 }
+
 public class NodeDemo {
     public static void main(String[] args) {
         Node head = new Node(10);

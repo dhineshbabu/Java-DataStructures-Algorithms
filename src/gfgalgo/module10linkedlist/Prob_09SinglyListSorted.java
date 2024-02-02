@@ -1,9 +1,9 @@
-package gfgalgo.linkedlist;
+package gfgalgo.module10linkedlist;
 
 public class Prob_09SinglyListSorted {
 
 
-    static Node insertBegin(Node head, int data){
+    static Node insertBegin(Node head, int data) {
         Node newNode = new Node(data);
         newNode.next = head;
         return newNode;
@@ -13,12 +13,12 @@ public class Prob_09SinglyListSorted {
         // we need to traverse to the last node
         Node temp = new Node(100);
 
-        if(head == null) {
+        if (head == null) {
             return temp;
         }
 
         Node curr = head;
-        while(curr.next != null) {
+        while (curr.next != null) {
             curr = curr.next;
         }
         curr.next = temp;
@@ -26,7 +26,7 @@ public class Prob_09SinglyListSorted {
     }
 
     static Node deleteBegin(Node head) {
-        if(head == null) {
+        if (head == null) {
             return null;
         }
         head = head.next;
@@ -34,13 +34,13 @@ public class Prob_09SinglyListSorted {
     }
 
     static Node deleteEnd(Node head) {
-        if(head == null) {
+        if (head == null) {
             return null;
         }
-        if(head.next == null) return null;
+        if (head.next == null) return null;
 
         Node curr = head;
-        while(curr.next.next != null) {
+        while (curr.next.next != null) {
             curr = curr.next;
         }
         curr.next = null;
@@ -49,22 +49,22 @@ public class Prob_09SinglyListSorted {
     }
 
     // insert at the given position
-    static Node insertAt(Node head, int index, int data){
+    static Node insertAt(Node head, int index, int data) {
         Node temp = new Node(data);
 
         // assume index starts at 1
-        if(index == 1) {
+        if (index == 1) {
             temp.next = head;
             return temp;
         }
 
         Node curr = head;
 
-        for(int i=1; i<index-2 && curr != null; i++) {
+        for (int i = 1; i < index - 2 && curr != null; i++) {
             curr = curr.next;
             //curr points to the previous index node
         }
-        if(curr == null) return head;
+        if (curr == null) return head;
 
         temp.next = curr.next;
         curr.next = temp;
@@ -96,11 +96,11 @@ public class Prob_09SinglyListSorted {
 
     static int search(Node head, int x) {
         int pos = 1;
-        if(head == null) return -1;
+        if (head == null) return -1;
         Node curr = head;
 
-        while(curr.next != null) {
-            if(curr.data == x) {
+        while (curr.next != null) {
+            if (curr.data == x) {
                 return pos;
             }
             curr = curr.next;
@@ -110,23 +110,23 @@ public class Prob_09SinglyListSorted {
     }
 
     static int searchRecursive(Node head, int x) {
-        if(head == null) return -1;
+        if (head == null) return -1;
 
-        if(head.data == x) return 1;
+        if (head.data == x) return 1;
 
         else {
             int res = searchRecursive(head.next, x);
-            if(res == -1) return -1;
+            if (res == -1) return -1;
             else return (res + 1);
         }
     }
 
-    static Node sortedInsert(Node head, int data){
+    static Node sortedInsert(Node head, int data) {
         Node temp = new Node(data);
 
-        if(head == null) return temp;
+        if (head == null) return temp;
 
-        if(data < head.data) {
+        if (data < head.data) {
             temp.next = head;
             return temp;
         }
@@ -134,7 +134,7 @@ public class Prob_09SinglyListSorted {
         Node curr = head;
 
         // traerse through LL until node.data < x
-        while(curr.next != null && curr.next.data < data) {
+        while (curr.next != null && curr.next.data < data) {
             curr = curr.next;
         }
 
@@ -147,8 +147,8 @@ public class Prob_09SinglyListSorted {
         // check current and current next data if they are same
         Node curr = head;
 
-        while(curr != null && curr.next != null) {
-            if(curr.data == curr.next.data) {
+        while (curr != null && curr.next != null) {
+            if (curr.data == curr.next.data) {
                 // unlink the next node;
                 curr.next = curr.next.next;
             } else {
@@ -156,8 +156,6 @@ public class Prob_09SinglyListSorted {
             }
         }
     }
-
-
 
 
     public static void main(String[] args) {

@@ -1,10 +1,10 @@
-package gfgalgo.linkedlist;
+package gfgalgo.module10linkedlist;
 
 public class DLLOperations {
 
     public static DLLNode insertBegin(DLLNode head, int data) {
         DLLNode temp = new DLLNode(data);
-        if(head == null) {
+        if (head == null) {
             head = temp;
             return head;
         }
@@ -17,13 +17,13 @@ public class DLLOperations {
 
     public static DLLNode insertEnd(DLLNode head, int data) {
         DLLNode temp = new DLLNode(data);
-        if(head == null) {
+        if (head == null) {
             head = temp;
             return head;
         }
 
         DLLNode curr = head;
-        while(curr.next != null) {
+        while (curr.next != null) {
             curr = curr.next;
         }
 
@@ -34,10 +34,10 @@ public class DLLOperations {
 
     public static DLLNode reverse(DLLNode head) {
         //handle corner cases
-        if(head == null || head.next == null) return head;
-        DLLNode prev = null, curr=head;
+        if (head == null || head.next == null) return head;
+        DLLNode prev = null, curr = head;
 
-        while(curr != null) {
+        while (curr != null) {
             prev = curr.prev;
             curr.prev = curr.next;
             curr.next = prev;
@@ -47,9 +47,9 @@ public class DLLOperations {
         return prev.prev;
     }
 
-    static DLLNode deleteHead(DLLNode head){
-        if(head == null) return head;
-        if(head.next == null) return null;
+    static DLLNode deleteHead(DLLNode head) {
+        if (head == null) return head;
+        if (head.next == null) return null;
         else {
             head = head.next;
             head.prev = null;
@@ -57,11 +57,11 @@ public class DLLOperations {
         }
     }
 
-    static DLLNode deleteEnd(DLLNode head){
-        if(head == null) return head;
-        if(head.next == null) return null;
+    static DLLNode deleteEnd(DLLNode head) {
+        if (head == null) return head;
+        if (head.next == null) return null;
         DLLNode curr = head;
-        while(curr.next != null) {
+        while (curr.next != null) {
             curr = curr.next;
         }
         curr.prev.next = null;
