@@ -1,4 +1,5 @@
-package gfgalgo.queue;
+package gfgalgo.module12queue;
+
 import java.util.*;
 
 public class Prob_05StackUsingQueue {
@@ -15,56 +16,43 @@ public class Prob_05StackUsingQueue {
 
         static int curr_size;
 
-        Stack()
-        {
+        Stack() {
             curr_size = 0;
         }
 
-        static void push(int x)
-        {
+        static void push(int x) {
             curr_size++;
-
-
             q2.add(x);
-
-
             while (!q1.isEmpty()) {
                 q2.add(q1.peek());
                 q1.remove();
             }
-
 
             Queue<Integer> q = q1;
             q1 = q2;
             q2 = q;
         }
 
-        static void pop()
-        {
-
-
+        static void pop() {
             if (q1.isEmpty())
                 return;
             q1.remove();
             curr_size--;
         }
 
-        static int top()
-        {
+        static int top() {
             if (q1.isEmpty())
                 return -1;
             return q1.peek();
         }
 
-        static int size()
-        {
+        static int size() {
             return curr_size;
         }
     }
 
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Stack s = new Stack();
         s.push(10);
         s.push(5);

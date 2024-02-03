@@ -1,4 +1,4 @@
-package gfgalgo.deque;
+package gfgalgo.module13deque;
 
 public class Prob_04FirstCircularTour {
     /*

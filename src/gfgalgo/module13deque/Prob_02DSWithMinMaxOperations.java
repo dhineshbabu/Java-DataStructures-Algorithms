@@ -1,4 +1,4 @@
-package gfgalgo.deque;
+package gfgalgo.module13deque;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -24,7 +24,7 @@ public class Prob_02DSWithMinMaxOperations {
         dq.offerFirst(x);
     }
 
-    void  insertMax(int x) {
+    void insertMax(int x) {
         dq.offerLast(x);
     }
 

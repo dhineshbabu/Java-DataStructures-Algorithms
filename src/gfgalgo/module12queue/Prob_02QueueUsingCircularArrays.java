@@ -1,4 +1,4 @@
-package gfgalgo.queue;
+package gfgalgo.module12queue;
 
 public class Prob_02QueueUsingCircularArrays {
 
@@ -12,8 +12,7 @@ public class Prob_02QueueUsingCircularArrays {
     int capacity;
     int array[];
 
-    public Prob_02QueueUsingCircularArrays(int capacity)
-    {
+    public Prob_02QueueUsingCircularArrays(int capacity) {
         this.capacity = capacity;
         front = this.size = 0;
         rear = capacity - 1;
@@ -21,20 +20,17 @@ public class Prob_02QueueUsingCircularArrays {
     }
 
 
-    boolean isFull(Prob_02QueueUsingCircularArrays queue)
-    {
+    boolean isFull(Prob_02QueueUsingCircularArrays queue) {
         return (queue.size == queue.capacity);
     }
 
 
-    boolean isEmpty(Prob_02QueueUsingCircularArrays queue)
-    {
+    boolean isEmpty(Prob_02QueueUsingCircularArrays queue) {
         return (queue.size == 0);
     }
 
 
-    void enqueue(int item)
-    {
+    void enqueue(int item) {
         if (isFull(this))
             return;
         this.rear = (this.rear + 1)
@@ -46,8 +42,7 @@ public class Prob_02QueueUsingCircularArrays {
     }
 
 
-    int dequeue()
-    {
+    int dequeue() {
         if (isEmpty(this))
             return Integer.MIN_VALUE;
 
@@ -59,8 +54,7 @@ public class Prob_02QueueUsingCircularArrays {
     }
 
 
-    int front()
-    {
+    int front() {
         if (isEmpty(this))
             return Integer.MIN_VALUE;
 
@@ -68,16 +62,14 @@ public class Prob_02QueueUsingCircularArrays {
     }
 
 
-    int rear()
-    {
+    int rear() {
         if (isEmpty(this))
             return Integer.MIN_VALUE;
 
         return this.array[this.rear];
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Prob_02QueueUsingCircularArrays queue = new Prob_02QueueUsingCircularArrays(1000);
 
         queue.enqueue(10);

@@ -1,4 +1,5 @@
-package gfgalgo.queue;
+package gfgalgo.module12queue;
+
 import java.util.*;
 
 public class Prob_04QueueWithArrayDeque {

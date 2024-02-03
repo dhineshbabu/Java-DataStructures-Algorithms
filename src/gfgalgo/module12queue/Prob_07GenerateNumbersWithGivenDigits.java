@@ -1,4 +1,4 @@
-package gfgalgo.queue;
+package gfgalgo.module12queue;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -21,12 +21,12 @@ public class Prob_07GenerateNumbersWithGivenDigits {
         queue.offer(digit1);
         queue.offer(digit2);
 
-        for(int count=0; count < n; count++){
+        for (int count = 0; count < n; count++) {
             String curr = queue.remove();
             System.out.print(curr + " ");
             // append the digits again to the curr and then push the combination
-            queue.add(curr+"5");
-            queue.add(curr+"6");
+            queue.add(curr + "5");
+            queue.add(curr + "6");
         }
     }
 

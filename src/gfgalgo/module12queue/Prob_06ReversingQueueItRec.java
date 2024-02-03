@@ -1,4 +1,4 @@
-package gfgalgo.queue;
+package gfgalgo.module12queue;
 
 import java.util.*;
 
@@ -16,11 +16,11 @@ public class Prob_06ReversingQueueItRec {
     static void reverse(Queue<Integer> queue) {
         Deque<Integer> stack = new ArrayDeque<>();
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             stack.push(queue.remove());
         }
 
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             queue.offer(stack.pop());
         }
     }
@@ -29,7 +29,7 @@ public class Prob_06ReversingQueueItRec {
     static void reverseRecursive(Queue<Integer> queue) {
 
         // base case
-        if(queue.isEmpty()) return;
+        if (queue.isEmpty()) return;
 
         int x = queue.remove();
         reverseRecursive(queue);

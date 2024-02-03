@@ -1,4 +1,4 @@
-package gfgalgo.queue;
+package gfgalgo.module12queue;
 
 public class Prob_01QueueUsingArrays {
     private int size;
@@ -19,28 +19,29 @@ public class Prob_01QueueUsingArrays {
     boolean isEmpty() {
         return size == 0;
     }
+
     int getFront() {
-    if(isEmpty()) return -1;
-    else return 0; // front will always be 0, only rear will change
+        if (isEmpty()) return -1;
+        else return 0; // front will always be 0, only rear will change
     }
 
     int getRear() {
-        if(isEmpty()) return -1;
-        else return size-1; //becauwe index starts with 0
+        if (isEmpty()) return -1;
+        else return size - 1; //becauwe index starts with 0
     }
 
     void enqueue(int x) {
-        if(isFull()) return;
+        if (isFull()) return;
 
         arr[size] = x;
         size++;
     }
 
-    void dequeue(){
-        if(isEmpty()) return;
-        else{
-            for(int i=0; i<size-1; i++) {
-                arr[i] = arr[i-1];
+    void dequeue() {
+        if (isEmpty()) return;
+        else {
+            for (int i = 0; i < size - 1; i++) {
+                arr[i] = arr[i - 1];
             }
             size--;
         }

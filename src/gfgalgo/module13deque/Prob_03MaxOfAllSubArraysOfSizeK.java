@@ -1,4 +1,4 @@
-package gfgalgo.deque;
+package gfgalgo.module13deque;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -9,41 +9,40 @@ public class Prob_03MaxOfAllSubArraysOfSizeK {
 
      */
 
-    static void printMax(int[] arr, int k){
+    static void printMax(int[] arr, int k) {
         int n = arr.length;
 
         Deque<Integer> dq = new LinkedList<>();
 
         // add the first window items
-        for(int i=0; i<k; i++){
-            while(!dq.isEmpty() && arr[i] >= arr[dq.peekLast()]){
+        for (int i = 0; i < k; i++) {
+            while (!dq.isEmpty() && arr[i] >= arr[dq.peekLast()]) {
                 dq.removeLast();
             }
             dq.addLast(i); // only storing the index in deque
         }
 
         // process the rest of the elements after first window
-        for(int i=k; i<n; i++) {
+        for (int i = k; i < n; i++) {
             //print the max in first window which will bne at the first position
-            System.out.print(arr[dq.peek()]+ " ");
-            while(!dq.isEmpty() && dq.peek() <= i-k){
+            System.out.print(arr[dq.peek()] + " ");
+            while (!dq.isEmpty() && dq.peek() <= i - k) {
                 // remove the previous window index if any
                 dq.removeFirst();
             }
 
             // do the comparison again with element
-            while(!dq.isEmpty() && arr[i] >= arr[dq.peekLast()]){
+            while (!dq.isEmpty() && arr[i] >= arr[dq.peekLast()]) {
                 dq.removeLast();
             }
             dq.addLast(i);
         }
 
-        System.out.print(arr[dq.peekLast()]+ " ");
+        System.out.print(arr[dq.peekLast()] + " ");
     }
 
-    public static void main(String[] args)
-    {
-        int arr[] = { 20, 40, 30, 10, 60};
+    public static void main(String[] args) {
+        int arr[] = {20, 40, 30, 10, 60};
         int k = 3;
         printMax(arr, k);
     }

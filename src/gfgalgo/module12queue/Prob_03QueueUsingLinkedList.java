@@ -1,4 +1,4 @@
-package gfgalgo.queue;
+package gfgalgo.module12queue;
 
 public class Prob_03QueueUsingLinkedList {
     /*
@@ -7,7 +7,7 @@ public class Prob_03QueueUsingLinkedList {
     rear as tail for adding an element
      */
 
-    static class Node{
+    static class Node {
         int data;
         Node next;
 
@@ -29,7 +29,7 @@ public class Prob_03QueueUsingLinkedList {
     // always at the rear end
     void enqueue(int n) {
         Node temp = new Node(n);
-        if(front == null) {
+        if (front == null) {
             front = temp;
             rear = temp;
             return;
@@ -39,10 +39,10 @@ public class Prob_03QueueUsingLinkedList {
     }
 
     void dequeue() {
-        if(front == null) return;
+        if (front == null) return;
         Node temp = front;
         front = front.next;
-        if(front == null) rear = null;
+        if (front == null) rear = null;
         System.out.println(temp.data);
     }
 }
