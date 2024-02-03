@@ -1,4 +1,4 @@
-package gfgalgo.binarysearchtree;
+package gfgalgo.module15binarysearchtree;
 
 import java.util.*;
 
@@ -12,39 +12,40 @@ public class Prob_02MoreBSTProblems {
         else recu fir right subtree with k as (k-lcount-1) - skipping all elements
      */
 
-   private static class Node{
+    private static class Node {
         int data;
         Node left, right;
         int lCount;
-        Node(int x){
+
+        Node(int x) {
             data = x;
         }
 
     }
 
-    private static class Pair{
+    private static class Pair {
         Node node;
         int hd;
-        Pair(Node n,int h){node=n;hd=h;}
+
+        Pair(Node n, int h) {
+            node = n;
+            hd = h;
+        }
     }
 
-    public static Node insert(Node root, int x)
-    {
+    public static Node insert(Node root, int x) {
         if (root == null)
             return new Node(x);
 
         if (x < root.data) {
             root.left = insert(root.left, x);
             root.lCount++;
-        }
-
-        else if (x > root.data)
+        } else if (x > root.data)
             root.right = insert(root.right, x);
         return root;
     }
 
-    public static Node kthSmallest(Node root, int k)
-    {
+    public static Node kthSmallest(Node root, int k) {
         if (root == null)
             return null;
 
@@ -69,13 +70,13 @@ public class Prob_02MoreBSTProblems {
    and the values in its right subtree are greater than the node's value.
    The code uses an in-order traversal approach to check if the tree satisfies the conditions of a BST.
     */
-        if(root == null) return true;
+        if (root == null) return true;
 
         // traverse to the leftmost node
-        if(isBST(root.left) == false) return false;
+        if (isBST(root.left) == false) return false;
 
         // Check if the current node's value is greater than the previous value
-        if(root.data <= prev) return false;
+        if (root.data <= prev) return false;
 
         // Update the previous value to the current root's value
         prev = root.data;
@@ -86,31 +87,32 @@ public class Prob_02MoreBSTProblems {
 
 
     // checking
-    static Node previous=null,first=null,second=null;
-    public static void fixBSTWith2Swpa(Node root)
-    {
+    static Node previous = null, first = null, second = null;
+
+    public static void fixBSTWith2Swpa(Node root) {
 
         /*
         Given a binary search tree with two swapped nodes, the task is to fix the binary search tree by swapping them back.
-
+        Approach is doing an inorder traversal and if violation is there, then sert the first variable and set second
          */
         if (root == null)
             return;
         fixBSTWith2Swpa(root.left);
-        if(previous!=null && root.data<previous.data){
-            if(first==null)
-                first=previous;
-            second=root;
+        if (previous != null && root.data < previous.data) {
+            if (first == null)
+                first = previous;
+            second = root;
         }
-        previous=root;
+        previous = root;
 
         fixBSTWith2Swpa(root.right);
     }
 
-    public static void inorder(Node root){
-        if(root!=null){
+
+    public static void inorder(Node root) {
+        if (root != null) {
             inorder(root.left);
-            System.out.print(root.data+" ");
+            System.out.print(root.data + " ");
             inorder(root.right);
         }
     }
@@ -124,11 +126,11 @@ public class Prob_02MoreBSTProblems {
             * Hashing - since we are returning boolean, we can use HashSet
          */
 
-        if(root == null) return false;
+        if (root == null) return false;
 
-        if(pairSum(root.left, sum , s) == true) return true;
+        if (pairSum(root.left, sum, s) == true) return true;
 
-        if(s.contains(sum-root.data)) {
+        if (s.contains(sum - root.data)) {
             return true;
         } else {
             s.add(root.data);
@@ -137,6 +139,7 @@ public class Prob_02MoreBSTProblems {
         return pairSum(root.right, sum, s);
 
     }
+
 
     public static void vSumR(Node root, int hd, TreeMap<Integer, Integer> mp) {
         if (root == null) {
@@ -166,6 +169,7 @@ public class Prob_02MoreBSTProblems {
             System.out.print(entry.getValue() + " ");
         }
     }
+
 
     // Function for vertical traversal of a binary tree
     public static void vTraversal(Node root) {
@@ -250,28 +254,46 @@ public class Prob_02MoreBSTProblems {
         }
     }
 
-    public static void bottomView(Node root){
-        Queue<Pair> q=new LinkedList<>();
-        Map<Integer,Integer> mp=new TreeMap<>();
-        q.add(new Pair(root,0));
-        while(q.isEmpty()==false){
-            Pair p=q.poll();
-            Node curr=p.node;
-            int hd=p.hd;
-            mp.put(hd,curr.data); // <- only change to the above code
-            if(curr.left!=null)
-                q.add(new Pair(curr.left,hd-1));
-            if(curr.right!=null)
-                q.add(new Pair(curr.right,hd+1));
+    // Method to print the bottom view of a binary tree
+    public static void bottomView(Node root) {
+        // Using a queue to perform level order traversal
+        Queue<Pair> q = new LinkedList<>();
+
+        // Using a TreeMap to store the horizontal distance and the corresponding node's data
+        Map<Integer, Integer> mp = new TreeMap<>();
+
+        // Adding the root node to the queue with horizontal distance 0
+        q.add(new Pair(root, 0));
+
+        // Loop through the nodes in level order
+        while (q.isEmpty() == false) {
+            // Dequeue the pair containing the current node and its horizontal distance
+            Pair p = q.poll();
+            Node curr = p.node;
+            int hd = p.hd;
+
+            // Update the TreeMap with the latest node's data for the current horizontal distance
+            mp.put(hd, curr.data);
+
+            // Enqueue the left child with a decreased horizontal distance
+            if (curr.left != null)
+                q.add(new Pair(curr.left, hd - 1));
+
+            // Enqueue the right child with an increased horizontal distance
+            if (curr.right != null)
+                q.add(new Pair(curr.right, hd + 1));
         }
-        for(Map.Entry<Integer,Integer> x:mp.entrySet()){
-            System.out.print(x.getValue()+" ");
+
+        // Print the bottom view nodes in the order of their horizontal distances
+        for (Map.Entry<Integer, Integer> x : mp.entrySet()) {
+            System.out.print(x.getValue() + " ");
         }
     }
 
+
     public static void main(String[] args) {
         Node root = null;
-        int keys[] = { 20, 8, 22, 4, 12, 10, 14 };
+        int keys[] = {20, 8, 22, 4, 12, 10, 14};
 
         for (int x : keys)
             root = insert(root, x);
@@ -300,9 +322,9 @@ public class Prob_02MoreBSTProblems {
 
 
         fixBSTWith2Swpa(root1);
-        int temp=first.data;
-        first.data=second.data;
-        second.data=temp;
+        int temp = first.data;
+        first.data = second.data;
+        second.data = temp;
         inorder(root1);
         System.out.println();
 

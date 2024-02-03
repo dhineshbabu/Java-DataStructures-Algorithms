@@ -1,19 +1,20 @@
-package gfgalgo.binarysearchtree;
+package gfgalgo.module15binarysearchtree;
 
 public class Prob_01BasicBST {
     static class Node {
         Node left, right;
         int key;
 
-        Node(int x){
+        Node(int x) {
             key = x;
         }
     }
-    static boolean search(Node root, int x){
+
+    static boolean search(Node root, int x) {
         // recursive
-        if(root == null) return false;
-        else if(root.key == x) return true;
-        else if(x > root.key) {
+        if (root == null) return false;
+        else if (root.key == x) return true;
+        else if (x > root.key) {
             return search(root.right, x);
         } else {
             return search(root.left, x);
@@ -44,27 +45,26 @@ public class Prob_01BasicBST {
     static Node insertIterative(Node root, int x) {
         Node temp = new Node(x);
         Node parent = null, curr = root;
-        while(curr != null) {
+        while (curr != null) {
             // finding parent in this loop
             parent = curr;
-            if(curr.key > x) {
+            if (curr.key > x) {
                 curr = curr.left;
-            } else if(curr.key < x) {
+            } else if (curr.key < x) {
                 curr = curr.right;
             } else {
                 return root; // if key is already there in the key the dont make any change
             }
         }
 
-        if(parent == null) {
+        if (parent == null) {
             // there is only one node
             return temp;
         }
 
-        if(parent.key > x) {
+        if (parent.key > x) {
             parent.left = temp;
-        } else
-        {
+        } else {
             parent.right = temp;
         }
         return root;
@@ -81,9 +81,9 @@ public class Prob_01BasicBST {
      */
 
     static Node getSuccessor(Node root) {
-        Node curr= root.right;
+        Node curr = root.right;
 
-        while(curr != null && curr.left!= null) {
+        while (curr != null && curr.left != null) {
             // find the left most children
             curr = curr.left;
         }
@@ -91,19 +91,19 @@ public class Prob_01BasicBST {
         return curr;
     }
 
-    static Node deleteRec(Node root, int x){
+    static Node deleteRec(Node root, int x) {
         // we use find successor helper method
-        if(root == null) return null;
+        if (root == null) return null;
 
-        if(root.key > x) {
+        if (root.key > x) {
             root.left = deleteRec(root.left, x);
-        } else if(root.key < x) {
+        } else if (root.key < x) {
             root.right = deleteRec(root.right, x);
         } else {
             // if the node is the one to be deleted
             // check if they hae any one children then simply use the children as the node
-            if(root.left == null) return root.right;
-            else if(root.right == null) return root.left;
+            if (root.left == null) return root.right;
+            else if (root.right == null) return root.left;
             else {
                 // if the node to be deleted is having both the children
                 // then find the successor using the helper method
@@ -117,13 +117,13 @@ public class Prob_01BasicBST {
         return root;
     }
 
-    static Node floor(Node root, int x){
+    static Node floor(Node root, int x) {
         Node res = null;
 
-        while(root != null) {
-            if(root.key == x) {
+        while (root != null) {
+            if (root.key == x) {
                 return root;
-            } else if(root.key > x) {
+            } else if (root.key > x) {
                 root = root.left;
             } else {
                 // update the res variable as this root or right side will be the floor
@@ -135,13 +135,13 @@ public class Prob_01BasicBST {
         return res;
     }
 
-    static Node ceil(Node root, int x){
+    static Node ceil(Node root, int x) {
         Node res = null;
 
-        while(root != null) {
-            if(root.key == x) {
+        while (root != null) {
+            if (root.key == x) {
                 return root;
-            } else if(root.key < x) {
+            } else if (root.key < x) {
                 root = root.right;
             } else {
                 res = root;
@@ -154,11 +154,10 @@ public class Prob_01BasicBST {
     /*
     print kth smallest element
      */
-    static void printKthElementSmall(Node root, int k){
-       // refer the problem in another code
+    static void printKthElementSmall(Node root, int k) {
+        // refer the problem in another code
 
     }
-
 
 
     public static void main(String[] args) {
@@ -176,7 +175,7 @@ public class Prob_01BasicBST {
         //insert
         root = insert(root, 90);
         System.out.println(root.key);
-        System.out.println("Floor: "+ floor(root, 12).key);
-        System.out.println("Ceil: "+ ceil(root, 18).key);
+        System.out.println("Floor: " + floor(root, 12).key);
+        System.out.println("Ceil: " + ceil(root, 18).key);
     }
 }
