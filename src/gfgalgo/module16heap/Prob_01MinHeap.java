@@ -1,4 +1,4 @@
-package gfgalgo.heap;
+package gfgalgo.module16heap;
 
 public class Prob_01MinHeap {
 
@@ -14,9 +14,17 @@ public class Prob_01MinHeap {
     }
 
     // Helper functions to calculate indices
-    int left(int i) { return (2 * i + 1); }
-    int right(int i) { return (2 * i + 2); }
-    int parent(int i) { return (i - 1) / 2; }
+    int left(int i) {
+        return (2 * i + 1);
+    }
+
+    int right(int i) {
+        return (2 * i + 2);
+    }
+
+    int parent(int i) {
+        return (i - 1) / 2;
+    }
 
     // Method to insert a new element into the min heap
     public void insert(int x) {
@@ -28,7 +36,7 @@ public class Prob_01MinHeap {
         arr[size - 1] = x;
 
         // Heapify Up: Reorganize the heap to maintain the min heap property
-        for (int i = size - 1; i != 0 && arr[parent(i)] > arr[i];) {
+        for (int i = size - 1; i != 0 && arr[parent(i)] > arr[i]; ) {
             // Swap the current element with its parent if the parent is greater
             int temp = arr[i];
             arr[i] = arr[parent(i)];
@@ -92,8 +100,8 @@ public class Prob_01MinHeap {
         return arr[size];
     }
 
-    public void buildHeap(){
-        for(int i=(size-2)/2;i>=0;i--)
+    public void buildHeap() {
+        for (int i = (size - 2) / 2; i >= 0; i--)
             minHeapify(i);
     }
 
@@ -113,15 +121,13 @@ public class Prob_01MinHeap {
         }
     }
 
-    void deleteKey(int i)
-    {
+    void deleteKey(int i) {
         decreaseKey(i, Integer.MIN_VALUE);
         extractMin();
     }
 
-    public static void main(String args[])
-    {
-        Prob_01MinHeap h=new Prob_01MinHeap(11);
+    public static void main(String args[]) {
+        Prob_01MinHeap h = new Prob_01MinHeap(11);
         h.insert(3);
         h.insert(2);
         h.insert(15);

@@ -1,4 +1,4 @@
-package gfgalgo.heap;
+package gfgalgo.module16heap;
 
 import java.util.Iterator;
 import java.util.PriorityQueue;

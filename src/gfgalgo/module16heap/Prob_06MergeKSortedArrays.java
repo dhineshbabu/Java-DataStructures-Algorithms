@@ -1,4 +1,4 @@
-package gfgalgo.heap;
+package gfgalgo.module16heap;
 
 import java.util.*;
 
@@ -25,29 +25,28 @@ class Triplet implements Comparable<Triplet> {
 
 
 public class Prob_06MergeKSortedArrays {
-    public static List<Integer> mergeArr(ArrayList<ArrayList<Integer> > arr)
-    {
-        List<Integer> res=new ArrayList<Integer>();
-        PriorityQueue<Triplet> pq=new PriorityQueue<Triplet>();
+    public static List<Integer> mergeArr(ArrayList<ArrayList<Integer>> arr) {
+        List<Integer> res = new ArrayList<Integer>();
+        PriorityQueue<Triplet> pq = new PriorityQueue<Triplet>();
 
-        for(int i=0;i<arr.size();i++)
-            pq.add(new Triplet(arr.get(i).get(0),i,0));
+        for (int i = 0; i < arr.size(); i++)
+            pq.add(new Triplet(arr.get(i).get(0), i, 0));
 
-        while(pq.isEmpty()==false){
-            Triplet curr=pq.poll();
+        while (pq.isEmpty() == false) {
+            Triplet curr = pq.poll();
             res.add(curr.val);
-            int ap=curr.aPos;int vp=curr.vPos;
-            if(vp+1<arr.get(ap).size()){
-                pq.add(new Triplet(arr.get(ap).get(vp+1),ap,vp+1));
+            int ap = curr.aPos;
+            int vp = curr.vPos;
+            if (vp + 1 < arr.get(ap).size()) {
+                pq.add(new Triplet(arr.get(ap).get(vp + 1), ap, vp + 1));
             }
         }
 
         return res;
     }
 
-    public static void main (String[] args)
-    {
-        ArrayList<ArrayList<Integer> > arr=new ArrayList<ArrayList<Integer>>();
+    public static void main(String[] args) {
+        ArrayList<ArrayList<Integer>> arr = new ArrayList<ArrayList<Integer>>();
 
         ArrayList<Integer> a1 = new ArrayList<Integer>();
         a1.add(10);
@@ -69,7 +68,7 @@ public class Prob_06MergeKSortedArrays {
 
         List<Integer> res = mergeArr(arr);
 
-        System.out.println("Merged array is " );
+        System.out.println("Merged array is ");
         for (int x : res)
             System.out.print(x + " ");
     }

@@ -1,4 +1,4 @@
-package gfgalgo.heap;
+package gfgalgo.module16heap;
 
 import java.util.*;
 
@@ -31,16 +31,14 @@ public class Prob_02SortKSortedArray {
     }
 
 
-    private static void printArray(int[] arr, int n)
-    {
-        for(int i = 0; i < n; i++)
+    private static void printArray(int[] arr, int n) {
+        for (int i = 0; i < n; i++)
             System.out.print(arr[i] + " ");
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         int k = 3;
-        int arr[] = { 2, 6, 3, 12, 56, 8 };
+        int arr[] = {2, 6, 3, 12, 56, 8};
         int n = arr.length;
         sortK(arr, n, k);
         System.out.println("Following is sorted array");

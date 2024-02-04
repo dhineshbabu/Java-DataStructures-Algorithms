@@ -388,6 +388,21 @@
 
 <hr />
 
+### Heaps
+
+* always a complete binary tree
+* we can have duplicates
+* Binary Heap is stored as an array
+* leftChild = 2 * parentIndex
+* rightChild = 2 * parentIndex + 1
+* Parent node index = childIndex-1 // 2
+* PriorityQueue is implementation of Binary Heap in Java
+* Two types:
+    * Min Heap
+    * Max Heap
+
+<hr/>
+
 ### Graphs
 
 * G = (V, E)
