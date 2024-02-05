@@ -1,4 +1,4 @@
-package gfgalgo.greedyalgo;
+package gfgalgo.module18greedyalgo;
 
 import java.util.PriorityQueue;
 
@@ -15,6 +15,7 @@ class Node {
         this.left = left;
     }
 }
+
 public class Prob_04HuffmanCoding {
     /*
     Used for lossless compression
@@ -34,7 +35,7 @@ public class Prob_04HuffmanCoding {
 
     static void printHCodes(char[] arr, int[] freq) {
         PriorityQueue<Node> pq = new PriorityQueue<>(
-                (n1, n2) -> n1.freq-n2.freq
+                (n1, n2) -> n1.freq - n2.freq
         );
 
         // add all the values from arrays into the priority queues
@@ -43,23 +44,23 @@ public class Prob_04HuffmanCoding {
         }
 
         // do the calculation and construct the binary tree
-        while(pq.size() > 1){
+        while (pq.size() > 1) {
             Node l = pq.poll();
             Node r = pq.poll();
-            pq.add(new Node('$', l.freq+r.freq, l, r));
+            pq.add(new Node('$', l.freq + r.freq, l, r));
         }
 
         // pq's peek will have the maximum number now
-            printRec(pq.peek(), "");
+        printRec(pq.peek(), "");
     }
 
-    static void printRec(Node root, String s){
-        if(root.ch != '$'){
-            System.out.println(root.ch+ " "+ s);
+    static void printRec(Node root, String s) {
+        if (root.ch != '$') {
+            System.out.println(root.ch + " " + s);
             return;
         }
-        printRec(root.left, s+"0");
-        printRec(root.right, s+"1");
+        printRec(root.left, s + "0");
+        printRec(root.right, s + "1");
     }
 
     public static void main(String[] args) {

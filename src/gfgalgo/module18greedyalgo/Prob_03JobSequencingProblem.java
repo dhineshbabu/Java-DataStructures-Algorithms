@@ -1,4 +1,4 @@
-package gfgalgo.greedyalgo;
+package gfgalgo.module18greedyalgo;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -25,12 +25,12 @@ public class Prob_03JobSequencingProblem {
     * else add it to the latest possible slot
      */
 
-    public static void printSeq(Job[] jobs){
+    public static void printSeq(Job[] jobs) {
         // sort the jobs array with decreasing order according to profit
         Arrays.sort(jobs, Comparator.comparingInt((Job j) -> j.profit).reversed());
 
-        for(Job job: jobs) {
-            System.out.println(job.id+" " +job.profit+" " +job.deadLine);
+        for (Job job : jobs) {
+            System.out.println(job.id + " " + job.profit + " " + job.deadLine);
         }
 
         // Maintain 3 variables
@@ -65,6 +65,7 @@ public class Prob_03JobSequencingProblem {
 
 
     }
+
     // main class
     public static void main(String[] args) {
         Job[] jobs = {

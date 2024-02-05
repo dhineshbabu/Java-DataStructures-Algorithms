@@ -1,20 +1,21 @@
-package gfgalgo.greedyalgo;
+package gfgalgo.module18greedyalgo;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
 class Activity {
-     int start, finish;
-     Activity(int s, int f){
-         start = s;
-         finish = f;
-     }
+    int start, finish;
+
+    Activity(int s, int f) {
+        start = s;
+        finish = f;
+    }
 
 }
 
 // create a MyCmp class for sorting
 class MyCmp implements Comparator<Activity> {
-    public int compare(Activity a1, Activity a2){
+    public int compare(Activity a1, Activity a2) {
         return a1.finish - a2.finish;
     }
 }
@@ -29,7 +30,7 @@ public class Prob_01ActivitySelection {
             b. Else add the current activity to the solution
      */
 
-    static int maxActivity(Activity[] arr){
+    static int maxActivity(Activity[] arr) {
         // sort the array according to finish time
         Arrays.sort(arr, new MyCmp());
         int res = 1;
@@ -37,7 +38,7 @@ public class Prob_01ActivitySelection {
 
         // check for the comparison and overlap
         for (int curr = 1; curr < arr.length; curr++) {
-            if(arr[curr].start >= arr[prev].finish) {
+            if (arr[curr].start >= arr[prev].finish) {
                 res++;
                 prev = res;
             }

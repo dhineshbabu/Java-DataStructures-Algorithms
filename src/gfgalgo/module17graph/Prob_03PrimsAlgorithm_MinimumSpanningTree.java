@@ -1,4 +1,4 @@
-package gfgalgo.graph;
+package gfgalgo.module17graph;
 
 import java.util.*;
 
@@ -37,7 +37,7 @@ public class Prob_03PrimsAlgorithm_MinimumSpanningTree {
             // Update key values of the adjacent vertices of the selected vertex
             for (int v = 0; v < V; v++)
                 if (graph[u][v] != 0 && !mSet[v])
-                    dist[v] = Math.min(dist[v], dist[u]+graph[u][v]);
+                    dist[v] = Math.min(dist[v], dist[u] + graph[u][v]);
         }
 
         return res; // Return the total weight of the minimum spanning tree
@@ -45,10 +45,10 @@ public class Prob_03PrimsAlgorithm_MinimumSpanningTree {
 
     public static void main(String[] args) {
         // Example graph represented as an adjacency matrix
-        int graph[][] = new int[][] { { 0, 5, 8, 0 },
-                { 5, 0, 10, 15 },
-                { 8, 10, 0, 20 },
-                { 0, 15, 20, 0 }, };
+        int graph[][] = new int[][]{{0, 5, 8, 0},
+                {5, 0, 10, 15},
+                {8, 10, 0, 20},
+                {0, 15, 20, 0},};
 
         // Print the total weight of the minimum spanning tree
         System.out.print(primMST(graph));

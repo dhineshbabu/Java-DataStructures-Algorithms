@@ -1,4 +1,4 @@
-package gfgalgo.graph.graphs;
+package gfgalgo.module17graph.graphs;
 
 public class Main {
     public static void main(String[] args) {

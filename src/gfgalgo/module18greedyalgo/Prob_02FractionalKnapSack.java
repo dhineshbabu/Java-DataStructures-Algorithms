@@ -1,27 +1,28 @@
-package gfgalgo.greedyalgo;
+package gfgalgo.module18greedyalgo;
 
 import java.util.Arrays;
 
 class Item implements Comparable<Item> {
     int wt, val;
 
-    public Item(int w, int v){
+    public Item(int w, int v) {
         wt = w;
         val = v;
     }
 
-    public int compareTo(Item i)
-    {
-        return wt*i.val - val* i.wt;
-    }}
+    public int compareTo(Item i) {
+        return wt * i.val - val * i.wt;
+    }
+}
+
 public class Prob_02FractionalKnapSack {
-    static double fracKnapSack(Item[] arr, int totalWeight){
+    static double fracKnapSack(Item[] arr, int totalWeight) {
         // sort the array
         Arrays.sort(arr);
 
         double res = 0.0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i].wt <= totalWeight) {
+            if (arr[i].wt <= totalWeight) {
                 res += arr[i].val;
 
                 // subtract from total weight

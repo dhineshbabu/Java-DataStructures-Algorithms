@@ -429,9 +429,9 @@
 
 * GRAPH REPRESENTATION
     * Adjacency Matrix
+    * Adjacency List
         * Dynamic Sized Arrays
         * Linked Lists
-    * Adjacency List
 
 * Graph Traversal:
     * BFS

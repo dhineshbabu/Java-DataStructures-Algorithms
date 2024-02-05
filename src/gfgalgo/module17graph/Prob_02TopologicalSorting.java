@@ -1,7 +1,8 @@
-package gfgalgo.graph;
+package gfgalgo.module17graph;
+
 import java.util.*;
 
-public class  Prob_02TopologicalSorting {
+public class Prob_02TopologicalSorting {
     /*
 
      -- This is also called Khan's Algorithm
@@ -13,23 +14,21 @@ public class  Prob_02TopologicalSorting {
     * we need to create an array indegree
      */
 
-    static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v)
-    {
+    static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
         adj.get(u).add(v);
     }
 
-    static void topologicalSort(ArrayList<ArrayList<Integer>> adj, int V)
-    {
+    static void topologicalSort(ArrayList<ArrayList<Integer>> adj, int V) {
 
         // update the indegree array
         int[] in_degree = new int[V];
 
         for (int u = 0; u < V; u++) {
-            for (int x:adj.get(u))
+            for (int x : adj.get(u))
                 in_degree[x]++;
         }
 
-        Queue<Integer> q=new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();
 
         // step 1 - add all the vertices with indegree as 0
         for (int i = 0; i < V; i++)
@@ -40,11 +39,11 @@ public class  Prob_02TopologicalSorting {
         while (!q.isEmpty()) {
             int u = q.poll();
             // print the current queue element
-            System.out.print(u+" ");
+            System.out.print(u + " ");
 
             // each of the connected vertex, reduce the indegree count
             // if it becomes 0 add it to the queue
-            for (int x: adj.get(u))
+            for (int x : adj.get(u))
                 if (--in_degree[x] == 0)
                     q.add(x);
         }
@@ -54,26 +53,25 @@ public class  Prob_02TopologicalSorting {
     // topological sorting will work only for acyclic graphs
     // maintain a count variable- after processing all the vertices count == count(v) then no cycle
 
-    static void cycleTopologicalSort(ArrayList<ArrayList<Integer>> adj, int V)
-    {
+    static void cycleTopologicalSort(ArrayList<ArrayList<Integer>> adj, int V) {
         int[] in_degree = new int[V];
 
         for (int u = 0; u < V; u++) {
-            for (int x:adj.get(u))
+            for (int x : adj.get(u))
                 in_degree[x]++;
         }
 
-        Queue<Integer> q=new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < V; i++)
             if (in_degree[i] == 0)
                 q.add(i);
 
-        int count=0;
-        while (q.isEmpty()==false) {
+        int count = 0;
+        while (q.isEmpty() == false) {
             int u = q.poll();
 
 
-            for (int x: adj.get(u))
+            for (int x : adj.get(u))
                 if (--in_degree[x] == 0)
                     q.add(x);
 
@@ -84,8 +82,7 @@ public class  Prob_02TopologicalSorting {
 
         if (count != V) {
             System.out.println("There exists a cycle in the graph");
-        }
-        else{
+        } else {
             System.out.println("There exists no cycle in the graph");
         }
     }
@@ -106,28 +103,24 @@ public class  Prob_02TopologicalSorting {
             push u to st
      */
 
-    static void DFSTSRec(ArrayList<ArrayList<Integer>> adj, int u,Stack<Integer> st, boolean visited[])
-    {
-        visited[u]=true;
+    static void DFSTSRec(ArrayList<ArrayList<Integer>> adj, int u, Stack<Integer> st, boolean visited[]) {
+        visited[u] = true;
 
-        for(int v:adj.get(u)){
-            if(visited[v]==false)
-                DFSTSRec(adj,v,st,visited);
+        for (int v : adj.get(u)) {
+            if (visited[v] == false)
+                DFSTSRec(adj, v, st, visited);
         }
         st.push(u);
     }
 
 
-    static void topologicalSortDFS(ArrayList<ArrayList<Integer>> adj, int V)
-    {
-        boolean[] visited=new boolean[V];
-        for(int i = 0;i<V; i++)
-            visited[i] = false;
+    static void topologicalSortDFS(ArrayList<ArrayList<Integer>> adj, int V) {
+        boolean[] visited = new boolean[V];
         Stack<Integer> st = new Stack<Integer>();
 
-        for(int u=0;u<V;u++){
-            if(visited[u]==false){
-                DFSTSRec(adj,u,st,visited);
+        for (int u = 0; u < V; u++) {
+            if (!visited[u]) {
+                DFSTSRec(adj, u, st, visited);
             }
         }
 
@@ -138,22 +131,21 @@ public class  Prob_02TopologicalSorting {
 
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         int V = 5;
-        ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer>>(V);
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>(V);
 
         for (int i = 0; i < V; i++)
             adj.add(new ArrayList<Integer>());
 
-        addEdge(adj,0, 2);
-        addEdge(adj,0, 3);
-        addEdge(adj,1, 3);
-        addEdge(adj,1, 4);
-        addEdge(adj,2, 3);
+        addEdge(adj, 0, 2);
+        addEdge(adj, 0, 3);
+        addEdge(adj, 1, 3);
+        addEdge(adj, 1, 4);
+        addEdge(adj, 2, 3);
 
         System.out.println("Following is a Topological Sort of");
-        topologicalSort(adj,V);
+        topologicalSort(adj, V);
         System.out.println();
         topologicalSortDFS(adj, V);
     }
