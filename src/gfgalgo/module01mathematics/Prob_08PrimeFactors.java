@@ -50,5 +50,8 @@ public class Prob_08PrimeFactors {
 
         printPrimeFactors(n);
 
+        n = 16;
+        printPrimeFactors(n);
+
     }
 }

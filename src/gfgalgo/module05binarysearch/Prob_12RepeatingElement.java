@@ -2,7 +2,8 @@ package gfgalgo.module05binarysearch;
 
 public class Prob_12RepeatingElement {
     /*
-    In this problem, we have an array where each element appears only once except for a single element that has multiple occurrences. Additionally, the array always contains the number 0, and if the maximum element in the array is x,
+    In this problem, we have an array where each element appears only once except for a single element that has multiple occurrences.
+    Additionally, the array always contains the number 0, and if the maximum element in the array is x,
     then all elements from 0 to x are guaranteed to be present in the array.
      */
 

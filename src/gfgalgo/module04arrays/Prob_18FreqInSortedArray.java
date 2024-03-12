@@ -1,11 +1,7 @@
 package gfgalgo.module04arrays;
 
 public class Prob_18FreqInSortedArray {
-    public static void main(String[] args) {
-        int[] arr = {10, 10, 10, 25, 30, 30};
 
-        printFreq(arr);
-    }
 
     public static void printFreq(int[] arr) {
         int n = arr.length;
@@ -25,5 +21,11 @@ public class Prob_18FreqInSortedArray {
         if (n == 1 || (arr[n - 1] != arr[n - 2])) {
             System.out.println(arr[n - 1] + ":" + 1);
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 10, 10, 25, 30, 30};
+
+        printFreq(arr);
     }
 }

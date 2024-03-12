@@ -11,7 +11,7 @@ public class Prob_05RemoveDuplicates {
             }
         }
 
-        return res;
+        return res; // return position of the unique arra
     }
 
     public static void main(String args[]) {

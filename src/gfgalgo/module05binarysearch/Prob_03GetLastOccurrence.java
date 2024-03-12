@@ -2,7 +2,7 @@ package gfgalgo.module05binarysearch;
 
 public class Prob_03GetLastOccurrence {
 
-    // do the reverse of getfirstoccurrence problem in the final else block
+    // do the reverse of getfirst occurrence problem in the final else block
 
     static int lastOcc(int arr[], int n, int x) {
         int low = 0, high = n - 1;

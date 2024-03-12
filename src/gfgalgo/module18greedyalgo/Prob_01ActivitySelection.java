@@ -40,7 +40,7 @@ public class Prob_01ActivitySelection {
         for (int curr = 1; curr < arr.length; curr++) {
             if (arr[curr].start >= arr[prev].finish) {
                 res++;
-                prev = res;
+                prev = curr;
             }
         }
         return res;

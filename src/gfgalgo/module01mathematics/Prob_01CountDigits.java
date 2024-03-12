@@ -6,9 +6,10 @@ public class Prob_01CountDigits {
     time complexity: ø(d)
      */
     public static int digits(int x) {
+        // initiate count variable
         int count = 0;
-        while(x>0) {
-            x = x/10;
+        while (x > 0) {
+            x = x / 10;
             count++;
         }
         return count;

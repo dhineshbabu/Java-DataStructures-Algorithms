@@ -95,6 +95,10 @@ public class Prob_13AInfixToPostFixConversion {
         String exp = "a+b*(c^d-e)^(f+g*h)-i";
         populateMap();
         infixToPostfix(exp);
+        System.out.println();
+        output = "";
+        String exp1 = "a+b*i";
+        infixToPostfix(exp1);
     }
 
 }

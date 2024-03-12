@@ -2,7 +2,7 @@ package gfgalgo.module02bitmagic;
 
 public class Prob_01CheckIfKthBitIsSet {
     /*
-    Intuition is to multiple the given number with number for which only the kth bit is set
+    Intuition is to multiply the given number with number for which only the kth bit is set
     formula to get the number with only Kth bit - 2 ^ (k-1)
      */
     public static void checkKthBit(int n, int k) {

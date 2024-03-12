@@ -50,7 +50,7 @@ public class Prob_14MaxCircularSubArraySum {
 
     public static void main(String args[]) {
         // Example array
-        int arr[] = {8, -4, 3, -5, 4};
+        int arr[] = {8, -4, 3, -5, 4}; // 4+8=12 is the answer for this input
         int n = 5;
 
         // Print the overall maximum sum of subarrays (with or without circular wrapping)

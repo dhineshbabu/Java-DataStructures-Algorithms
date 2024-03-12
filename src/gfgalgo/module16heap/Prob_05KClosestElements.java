@@ -31,12 +31,8 @@ public class Prob_05KClosestElements {
 
     public static void printKClosest(int arr[], int n, int k, int x) {
         PriorityQueue<Pair> pq = new PriorityQueue<>(
-                new Comparator<Pair>() {
-                    public int compare(Pair p1, Pair p2) {
-                        return p2.getValue().compareTo(
-                                p1.getValue());
-                    }
-                });
+                (p1, p2) -> p2.getValue().compareTo(
+                        p1.getValue()));
 
         for (int i = 0; i < k; i++) {
             pq.offer(new Pair(arr[i],

@@ -20,13 +20,25 @@ public class Prob_10PalindromeLinkedList {
         }
     }
 
-    static Node reverseList(Node head) {
-        if (head == null || head.next == null) return head;
-        Node rest_head = reverseList(head.next);
-        Node rest_tail = head.next;
-        rest_tail.next = head;
-        head.next = null;
-        return rest_head;
+//    static Node reverseList(Node head) {
+//        if (head == null || head.next == null) return head;
+//        Node rest_head = reverseList(head.next);
+//        Node rest_tail = head.next;
+//        rest_tail.next = head;
+//        head.next = null;
+//        return rest_head;
+//    }
+
+    private static Node reverseList(Node head) {
+        Node prev = null;
+        Node curr = head;
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        return prev;
     }
 
     static boolean isPalindrome(Node head) {

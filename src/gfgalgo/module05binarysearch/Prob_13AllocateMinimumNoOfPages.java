@@ -2,7 +2,8 @@ package gfgalgo.module05binarysearch;
 
 public class Prob_13AllocateMinimumNoOfPages {
     /*
-    We are provided with an array that represents the number of pages in each book, as well as the number of students available. Each student is required to read the books in a contiguous manner.
+    We are provided with an array that represents the number of pages in each book, as well as the number of students available.
+    Each student is required to read the books in a contiguous manner.
      Our objective is to determine the maximum number of pages that a single student needs to read in order to minimize the allocation.
      */
 

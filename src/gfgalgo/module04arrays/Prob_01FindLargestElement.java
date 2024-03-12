@@ -5,6 +5,7 @@ public class Prob_01FindLargestElement {
     public static void main(String[] args) {
         int[] arr = {10, 40, 24, 22, 45};
 
+        // keep the result variable for the placeholder index of the maximum number found so far
         int res = 0;
 
         for (int i = 0; i < arr.length; i++) {

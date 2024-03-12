@@ -30,6 +30,6 @@ public class Prob_01CeilingOnLeftInArray {
                 System.out.print("-1" + " ");
             s.add(arr[i]);
         }
-//        System.out.println(s);
+        System.out.println(s);
     }
 }
